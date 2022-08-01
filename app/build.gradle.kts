@@ -59,6 +59,8 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.ANDROID.LIFECYCLE_RUNTIME)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":data")))
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)
     androidTestImplementation(Dependencies.TEST.ESPRESSO_CORE)
