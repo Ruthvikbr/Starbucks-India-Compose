@@ -2,14 +2,18 @@ import Dependencies.VERSIONS.COMPOSE_VERSION
 import Dependencies.VERSIONS.DAGGER_VERSION
 import Dependencies.VERSIONS.KOTLIN_VERSION
 import Dependencies.VERSIONS.KTX_CORE_VERSION
+import Dependencies.VERSIONS.LIFECYCLE_VERSION
+import Dependencies.VERSIONS.SPLASH_SCREEN_VERSION
 
 object Dependencies {
     object VERSIONS {
-        const val COMPOSE_VERSION = "1.1.0-beta01"
+        const val COMPOSE_VERSION = "1.2.0"
         const val DAGGER_VERSION = "2.43"
         const val KOTLIN_VERSION = "1.7.0"
         const val KTX_CORE_VERSION = "1.7.0"
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
+        const val SPLASH_SCREEN_VERSION = "1.0.0-rc01"
+        const val LIFECYCLE_VERSION = "2.5.0"
     }
 
     object BUILDPLUGINS {
@@ -51,8 +55,12 @@ object Dependencies {
     }
 
     object ANDROID {
-        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+        const val LIFECYCLE_RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
+        const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
+        const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel:$LIFECYCLE_VERSION"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
+        const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${SPLASH_SCREEN_VERSION}"
     }
 
     object TEST {
