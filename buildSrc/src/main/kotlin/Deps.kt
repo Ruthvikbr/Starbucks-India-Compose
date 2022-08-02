@@ -3,6 +3,7 @@ import Dependencies.VERSIONS.DAGGER_VERSION
 import Dependencies.VERSIONS.KOTLIN_VERSION
 import Dependencies.VERSIONS.KTX_CORE_VERSION
 import Dependencies.VERSIONS.LIFECYCLE_VERSION
+import Dependencies.VERSIONS.NAV_VERSION
 import Dependencies.VERSIONS.SPLASH_SCREEN_VERSION
 
 object Dependencies {
@@ -14,6 +15,7 @@ object Dependencies {
         const val COMPOSE_COMPILER_VERSION = COMPOSE_VERSION
         const val SPLASH_SCREEN_VERSION = "1.0.0-rc01"
         const val LIFECYCLE_VERSION = "2.5.0"
+        const val NAV_VERSION = "2.5.1"
     }
 
     object BUILDPLUGINS {
@@ -52,6 +54,7 @@ object Dependencies {
         const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:$COMPOSE_VERSION"
         const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4:$COMPOSE_VERSION"
         const val COMPOSE_TEST_MANIFEST = "androidx.compose.ui:ui-test-manifest:$COMPOSE_VERSION"
+        const val COMPOSE_NAVIGATION = "androidx.navigation:navigation-compose:$NAV_VERSION"
     }
 
     object ANDROID {
