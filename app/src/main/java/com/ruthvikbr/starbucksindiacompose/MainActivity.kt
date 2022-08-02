@@ -14,6 +14,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksIndiaComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_StarbucksIndiaCompose)
         super.onCreate(savedInstanceState)
         setContent {
             StarbucksIndiaComposeTheme {

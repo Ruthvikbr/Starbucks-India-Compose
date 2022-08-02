@@ -7,15 +7,17 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = StarbucksGreen,
+    primaryVariant = AccentGreen,
+    secondary = HouseGreen,
+    onPrimary = LightGreen
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = StarbucksGreen,
+    primaryVariant = AccentGreen,
+    secondary = HouseGreen,
+    onPrimary = LightGreen
 
     /* Other default colors to override
     background = Color.White,
@@ -40,7 +42,7 @@ fun StarbucksIndiaComposeTheme(
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = StarbucksTypography,
         shapes = Shapes,
         content = content
     )

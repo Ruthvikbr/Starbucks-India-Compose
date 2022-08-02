@@ -53,12 +53,12 @@ kapt {
 
 dependencies {
 
-    implementation(Dependencies.KOTLIN.KTX_CORE)
     implementation(Dependencies.COMPOSE.COMPOSE_UI)
     implementation(Dependencies.COMPOSE.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
-    implementation(Dependencies.ANDROID.LIFECYCLE_RUNTIME)
+
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
+
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":data")))
     testImplementation(Dependencies.TEST.JUNIT)
@@ -68,9 +68,9 @@ dependencies {
     debugImplementation (Dependencies.COMPOSE.COMPOSE_TOOLING)
     debugImplementation(Dependencies.COMPOSE.COMPOSE_TEST_MANIFEST)
 
-    implementation(Dependencies.KOTLIN.KT_STD)
     implementation(Dependencies.ANDROID.APP_COMPAT)
     implementation(Dependencies.KOTLIN.KTX_CORE)
+    implementation(Dependencies.ANDROID.SPLASH_SCREEN)
 
     /*DAGGER HILT*/
     implementation(Dependencies.DI.HILT_ANDROID)
@@ -78,4 +78,7 @@ dependencies {
     kapt(Dependencies.DI.HILT_COMPILER)
     kapt(Dependencies.DI.HILT_ANDROID_COMPILER)
 
+    implementation(Dependencies.ANDROID.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL_KTX)
+    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL)
 }
