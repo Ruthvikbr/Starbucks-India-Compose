@@ -6,15 +6,13 @@
 <br/>
 
 ### Stack
-| Tools | Link |
-|     :---      |          :---: |
-| 🤖 Kotlin | [Kotlin](https://kotlinlang.org) |
-| 💚 Jetpack Compose | [Jetpack Compose](https://developer.android.com/jetpack/compose) |
-| 🏛 Architecture Components | [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) |
-| 💉 Dagger Hilt | [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) |
-| 🌐 Material Design | [Material Design](https://developer.android.com/jetpack/androidx/releases/compose-material) |
-| 🌊 Coroutines | [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) |
-| 🏄🏼‍♀️ Flows | [Flows](https://developer.android.com/kotlin/flow) |
+| Tools | Link | Version |
+|     :---:      |   :---: | :---:|
+| 🤖 Kotlin | [Kotlin](https://kotlinlang.org) | <img src="https://img.shields.io/badge/Kotlin-1.7.0-blue" /> |
+| 💚 Jetpack Compose | [Jetpack Compose](https://developer.android.com/jetpack/compose) | <img src="https://img.shields.io/badge/Jetpack%20Compose-1.2.0-brightgreen" /> |
+| 🏛 Architecture Components | [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) |  |
+| 💉 Dagger Hilt | [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) | <img src="https://img.shields.io/badge/Dagger%20Hilt-2.43-red" /> |
+| 🌐 Material Design | [Material Design](https://developer.android.com/jetpack/androidx/releases/compose-material) | <img src="https://img.shields.io/badge/Compose%20Material-1.2.0-blue" /> |
 
 ### Screenshots
 
