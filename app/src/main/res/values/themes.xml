@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.StarbucksIndiaCompose" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:statusBarColor">@color/black</item>
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">

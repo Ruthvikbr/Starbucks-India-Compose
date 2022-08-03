@@ -3,12 +3,12 @@ package com.ruthvikbr.starbucksindiacompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ruthvikbr.starbucksindiacompose.ui.screens.DashboardScreen
+import com.ruthvikbr.starbucksindiacompose.ui.route.dashboardRoute
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksIndiaComposeTheme
-import com.ruthvikbr.starbucksindiacompose.ui.utils.Screen
+import com.ruthvikbr.starbucksindiacompose.ui.utils.Route
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,11 +19,9 @@ class MainActivity : ComponentActivity() {
             StarbucksIndiaComposeTheme {
                 NavHost(
                     navController = navController,
-                    startDestination = Screen.DashboardScreen.route
+                    startDestination = Route.Dashboard.route
                 ) {
-                    composable(Screen.DashboardScreen.route) {
-                        DashboardScreen(navController = navController)
-                    }
+                    dashboardRoute(navController)
                 }
             }
         }
