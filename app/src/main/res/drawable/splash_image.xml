@@ -3,6 +3,10 @@
 
     <item android:drawable="@color/splash_background" />
 
-    <item android:drawable="@drawable/ic_starbucks" android:gravity="center" />
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:drawable="@drawable/ic_starbucks"
+        android:gravity="center" />
 
 </layer-list>
