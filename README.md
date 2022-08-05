@@ -1,7 +1,7 @@
 <h1 align=center>Starbucks Compose</h1>
 
 <h3 align=center>Overview</h3>
-<p align=center>A Jetpack compose clone of the Starbucks India mobile app. The purpose of this app is to build an android app using the Modern Android Development practices such as Jetpack Compose , Clean Architecture and also to build the app following the design principles mentioned in the official starbucks [design guide](https://creative.starbucks.com/)</p>
+<p align=center>A Jetpack compose clone of the Starbucks India mobile app. The purpose of this app is to build an android app using the Modern Android Development practices such as Jetpack Compose , Clean Architecture and also to build the app following the design principles mentioned in the official starbucks <a href="https://creative.starbucks.com/">Design guide</a></p>
 
 <br/>
 
