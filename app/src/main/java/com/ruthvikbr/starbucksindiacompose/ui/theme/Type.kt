@@ -1,7 +1,6 @@
 package com.ruthvikbr.starbucksindiacompose.ui.theme
 
 import androidx.compose.material.Typography
-import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -17,19 +16,39 @@ val SourceSansFontFamily = FontFamily(
     Font(R.font.source_sans_pro_light_italic, weight = FontWeight.Light, style = FontStyle.Italic),
     Font(R.font.source_sans_pro_regular, weight = FontWeight.Normal, style = FontStyle.Normal),
     Font(R.font.source_sans_pro_italic, weight = FontWeight.Normal, style = FontStyle.Italic),
-    Font(R.font.source_sans_pro_semi_bold_italic, weight = FontWeight.SemiBold, style = FontStyle.Normal),
+    Font(R.font.source_sans_pro_semi_bold, weight = FontWeight.SemiBold, style = FontStyle.Normal),
     Font(R.font.source_sans_pro_semi_bold_italic, weight = FontWeight.SemiBold, style = FontStyle.Italic),
     Font(R.font.source_sans_pro_extra_light, weight = FontWeight.Thin, style = FontStyle.Normal),
     Font(R.font.source_sans_pro_extra_light_italic, weight = FontWeight.Thin, style = FontStyle.Italic),
 )
-// Set of Material typography styles to start with
+
 val StarbucksTypography = Typography(
-    defaultFontFamily = SourceSansFontFamily,
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = SourceSansFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
+    ),
+    h4 = TextStyle(
+        fontFamily = SourceSansFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp
+    ),
+    h5 = TextStyle(
+        fontFamily = SourceSansFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = SourceSansFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 26.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = SourceSansFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    ),
+
     /* Other default text styles to override
     button = TextStyle(
         fontFamily = FontFamily.Default,

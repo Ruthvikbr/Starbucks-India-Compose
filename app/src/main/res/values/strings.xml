@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Starbucks India Compose</string>
+
+    <!-- Dashboard - Logged In -->
+    <string name="home_header_logged_in">Good %s , %s</string> <!-- Good Morning . Tom-->
+    <string name="profile">Profile</string>
+    <string name="pay_in_store">Pay in store</string>
+
+    <!-- Dashboard - Logged out -->
+    <string name="home_header_logged_out">It\'s a great day for coffee</string>
+    <string name="sign_in">Sign in</string>
+    <string name="join_now">Join now</string>
+
+
+    <!-- Dashboard - Common-->
+    <string name="inbox">Inbox</string>
+    <string name="settings">Settings</string>
+    <string name="details">Details</string>
+
 </resources>

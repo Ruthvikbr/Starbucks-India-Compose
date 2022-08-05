@@ -3,8 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/compose-model-1659595151996.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659596528406.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659604727190.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659606334083.xml" value="0.11018518518518519" />
+        <entry key="../../../../../layout/compose-model-1659608223463.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659676676587.xml" value="0.165" />
+        <entry key="../../../../../layout/compose-model-1659689765844.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659689987528.xml" value="0.22870370370370371" />
+        <entry key="../../../../../layout/compose-model-1659693418307.xml" value="0.20277777777777778" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1035" />
+        <entry key="app/src/main/res/drawable/ic_gift.xml" value="0.1035" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1035" />
+        <entry key="app/src/main/res/drawable/ic_order_selected.xml" value="0.1035" />
+        <entry key="app/src/main/res/drawable/ic_star_selected.xml" value="0.1035" />
         <entry key="app/src/main/res/drawable/ic_starbucks.xml" value="0.1035" />
         <entry key="app/src/main/res/drawable/splash_image.xml" value="0.1035" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1035" />

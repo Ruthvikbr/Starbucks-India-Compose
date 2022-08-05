@@ -53,14 +53,15 @@ kapt {
 
 dependencies {
 
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":data")))
+
     implementation(Dependencies.COMPOSE.COMPOSE_UI)
     implementation(Dependencies.COMPOSE.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
-
+    implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
 
-    implementation(project(mapOf("path" to ":domain")))
-    implementation(project(mapOf("path" to ":data")))
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)
     androidTestImplementation(Dependencies.TEST.ESPRESSO_CORE)
@@ -71,6 +72,9 @@ dependencies {
     implementation(Dependencies.ANDROID.APP_COMPAT)
     implementation(Dependencies.KOTLIN.KTX_CORE)
     implementation(Dependencies.ANDROID.SPLASH_SCREEN)
+    implementation(Dependencies.ANDROID.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL_KTX)
+    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL)
 
     /*DAGGER HILT*/
     implementation(Dependencies.DI.HILT_ANDROID)
@@ -78,7 +82,11 @@ dependencies {
     kapt(Dependencies.DI.HILT_COMPILER)
     kapt(Dependencies.DI.HILT_ANDROID_COMPILER)
 
-    implementation(Dependencies.ANDROID.LIFECYCLE_RUNTIME_KTX)
-    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL_KTX)
-    implementation(Dependencies.ANDROID.LIFECYCLE_VIEWMODEL)
+    /* Coil */
+    implementation(Dependencies.COMPOSE.COIL_COMPOSE)
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_COIL)
+
+    /* Async */
+    implementation(Dependencies.ASYNC.COROUTINES)
+    implementation(Dependencies.ASYNC.COROUTINES_ANDROID)
 }
