@@ -10,5 +10,6 @@ java {
 
 dependencies {
     api(Dependencies.KOTLIN.KT_STD)
+    api(Dependencies.ASYNC.COROUTINES)
     implementation(Dependencies.DI.HILT_CORE)
 }

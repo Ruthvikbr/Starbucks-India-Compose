@@ -38,6 +38,7 @@ dependencies {
 
     /*Kotlin*/
     api(Dependencies.KOTLIN.KT_STD)
+    api(Dependencies.ASYNC.COROUTINES)
 
     /* Dagger Hilt */
     api(Dependencies.DI.HILT_ANDROID)

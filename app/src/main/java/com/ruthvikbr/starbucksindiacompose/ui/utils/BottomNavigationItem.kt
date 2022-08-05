@@ -11,11 +11,11 @@ data class NavigationItem(
 
 object BottomNavigationItems {
     val items = listOf(
-        NavigationItem("Home", R.drawable.star,R.drawable.star_selected,Screen.Home.route),
-        NavigationItem("Pay", R.drawable.pay,R.drawable.pay_selected,Screen.Pay.route),
-        NavigationItem("Order", R.drawable.order,R.drawable.order_selected,Screen.Order.route),
-        NavigationItem("Gift", R.drawable.gift,R.drawable.gift_selected,Screen.Gift.route),
-        NavigationItem("Stores", R.drawable.stores,R.drawable.stores_selected,Screen.Stores.route),
+        NavigationItem("Home", R.drawable.ic_star,R.drawable.ic_star_selected,Screen.Home.route),
+        NavigationItem("Pay", R.drawable.ic_pay,R.drawable.ic_pay_selected,Screen.Pay.route),
+        NavigationItem("Order", R.drawable.ic_order,R.drawable.ic_order_selected,Screen.Order.route),
+        NavigationItem("Gift", R.drawable.ic_gift,R.drawable.ic_gift_selected,Screen.Gift.route),
+        NavigationItem("Stores", R.drawable.ic_stores,R.drawable.ic_stores_selected,Screen.Stores.route),
     )
 }
 

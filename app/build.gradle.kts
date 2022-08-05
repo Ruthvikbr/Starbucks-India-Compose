@@ -81,5 +81,12 @@ dependencies {
     implementation(Dependencies.DI.HILT_NAVIGATION_COMPOSE)
     kapt(Dependencies.DI.HILT_COMPILER)
     kapt(Dependencies.DI.HILT_ANDROID_COMPILER)
-    
+
+    /* Coil */
+    implementation(Dependencies.COMPOSE.COIL_COMPOSE)
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_COIL)
+
+    /* Async */
+    implementation(Dependencies.ASYNC.COROUTINES)
+    implementation(Dependencies.ASYNC.COROUTINES_ANDROID)
 }

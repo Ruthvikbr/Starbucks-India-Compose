@@ -15,9 +15,11 @@ import com.ruthvikbr.starbucksindiacompose.ui.utils.Screen
 @Composable
 fun DashboardScreen(navController: NavController) {
     val bottomBarNavController = rememberNavController()
-    Scaffold(bottomBar = {
-        BottomNavigationBar(items = BottomNavigationItems.items,bottomBarNavController)
-    }) {
+    Scaffold(
+        bottomBar = {
+            BottomNavigationBar(items = BottomNavigationItems.items, bottomBarNavController)
+        },
+    ) {
         NavHost(
             navController = bottomBarNavController,
             startDestination = Screen.Home.route,

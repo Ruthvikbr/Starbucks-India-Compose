@@ -1,4 +1,6 @@
+import Dependencies.VERSIONS.COMPOSE_COIL_VERSION
 import Dependencies.VERSIONS.COMPOSE_VERSION
+import Dependencies.VERSIONS.COROUTINES_VERSION
 import Dependencies.VERSIONS.DAGGER_VERSION
 import Dependencies.VERSIONS.KOTLIN_VERSION
 import Dependencies.VERSIONS.KTX_CORE_VERSION
@@ -16,6 +18,8 @@ object Dependencies {
         const val SPLASH_SCREEN_VERSION = "1.0.0-rc01"
         const val LIFECYCLE_VERSION = "2.5.0"
         const val NAV_VERSION = "2.5.1"
+        const val COMPOSE_COIL_VERSION = "2.1.0"
+        const val COROUTINES_VERSION = "1.6.0"
     }
 
     object BUILDPLUGINS {
@@ -55,10 +59,11 @@ object Dependencies {
         const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4:$COMPOSE_VERSION"
         const val COMPOSE_TEST_MANIFEST = "androidx.compose.ui:ui-test-manifest:$COMPOSE_VERSION"
         const val COMPOSE_NAVIGATION = "androidx.navigation:navigation-compose:$NAV_VERSION"
+        const val COIL_COMPOSE = "io.coil-kt:coil-compose:${COMPOSE_COIL_VERSION}"
+        const val ACCOMPANIST_COIL = "com.google.accompanist:accompanist-coil:0.14.0"
     }
 
     object ANDROID {
-
         const val LIFECYCLE_RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
         const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
         const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel:$LIFECYCLE_VERSION"
@@ -78,5 +83,11 @@ object Dependencies {
         const val HILT_COMPILER = "androidx.hilt:hilt-compiler:1.0.0"
         const val HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:1.0.0"
         const val HILT_CORE = "com.google.dagger:hilt-core:$DAGGER_VERSION"
+    }
+
+    object ASYNC {
+        const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINES_VERSION}"
+        const val COROUTINES_ANDROID =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINES_VERSION}"
     }
 }
