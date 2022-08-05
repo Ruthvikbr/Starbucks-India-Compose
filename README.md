@@ -7,6 +7,9 @@
 
 ## Roadmap
 
+- [ ] Jetpack compose clone
+- [ ] Build backend with Ktor and Frontend integration
+
 ## Stack
 
 | Tools | Link | Version |
