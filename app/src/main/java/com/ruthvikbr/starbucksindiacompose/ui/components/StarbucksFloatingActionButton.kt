@@ -23,8 +23,9 @@ fun StarbucksFloatingActionButton(text: String, onClick: () -> Unit) {
         modifier = Modifier
             .clip(RoundedCornerShape(36.dp))
             .background(HouseGreen)
+            .clickable { onClick() }
             .padding(horizontal = 16.dp, vertical = 8.dp)
-            .clickable { onClick() },
+            ,
         style = StarbucksTypography.subtitle1.copy(color = Color.White),
     )
 }

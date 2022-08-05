@@ -18,6 +18,8 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksTypography
+import com.ruthvikbr.starbucksindiacompose.ui.theme.bottom_bar_background_color
+import com.ruthvikbr.starbucksindiacompose.ui.theme.bottom_bar_text_color
 import com.ruthvikbr.starbucksindiacompose.ui.utils.NavigationItem
 
 @Composable
@@ -27,7 +29,7 @@ fun BottomNavigationBar(
 ) {
 
     BottomNavigation(
-        backgroundColor = Color.White,
+        backgroundColor = bottom_bar_background_color,
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
@@ -46,7 +48,7 @@ fun BottomNavigationBar(
                 }, label = {
                     Text(
                         text = item.label,
-                        color = if (isSelected) StarbucksGreen else Color.Black,
+                        color = if (isSelected) StarbucksGreen else bottom_bar_text_color,
                         style = StarbucksTypography.h6.copy(fontSize = 12.sp)
                     )
                 },

@@ -9,7 +9,9 @@ import androidx.navigation.compose.rememberNavController
 import com.ruthvikbr.starbucksindiacompose.ui.route.dashboardRoute
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksIndiaComposeTheme
 import com.ruthvikbr.starbucksindiacompose.ui.utils.Route
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_StarbucksIndiaCompose)

@@ -1,6 +1,5 @@
 package com.ruthvikbr.starbucksindiacompose.ui.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,16 +10,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.ruthvikbr.domain.models.DMNewsItem
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.LightGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksTypography
+import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 
 @Composable
 fun NewsListItem(
@@ -64,9 +64,9 @@ fun NewsListItem(
                     }
             )
         }
-        Image(
-            painter = painterResource(id = dmNewsItem.image),
-            contentDescription = "News section",
+        AsyncImage(
+            model = rememberCoilImageRequest(data = dmNewsItem.image),
+            contentDescription = "",
             modifier = Modifier
                 .weight(1f),
             contentScale = ContentScale.FillBounds
@@ -79,7 +79,13 @@ fun NewsListItem(
 @Composable
 fun NewsListItemPreview() {
     val newsItem =
-        DMNewsItem(1, "FEATURED", "Join the Starbucks family now!", R.drawable.news_item1, "")
+        DMNewsItem(
+            1,
+            "FEATURED",
+            "Join the Starbucks family now!",
+            "https://iili.io/UHRSfV.jpg",
+            ""
+        )
     NewsListItem(dmNewsItem = newsItem) {
 
     }
