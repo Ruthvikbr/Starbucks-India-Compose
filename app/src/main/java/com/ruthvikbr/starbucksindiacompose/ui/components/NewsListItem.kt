@@ -17,9 +17,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.ruthvikbr.domain.models.DMNewsItem
 import com.ruthvikbr.starbucksindiacompose.R
-import com.ruthvikbr.starbucksindiacompose.ui.theme.LightGreen
-import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksGreen
-import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksTypography
+import com.ruthvikbr.starbucksindiacompose.ui.theme.*
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 
 @Composable
@@ -44,11 +42,11 @@ fun NewsListItem(
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Column {
-                Text(text = dmNewsItem.category, style = StarbucksTypography.h5)
+                Text(text = dmNewsItem.category, style = StarbucksTypography.h5.copy(color = HouseGreen))
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = dmNewsItem.title,
-                    style = StarbucksTypography.body2,
+                    style = StarbucksTypography.body2.copy(color = HouseGreen),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
