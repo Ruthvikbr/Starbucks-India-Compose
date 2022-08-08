@@ -22,6 +22,7 @@ import androidx.navigation.NavController
 import com.ruthvikbr.domain.models.DMNewsItem
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.*
+import com.ruthvikbr.starbucksindiacompose.ui.utils.Screen
 import com.ruthvikbr.starbucksindiacompose.ui.viewmodels.HomeViewModel
 
 @Composable
@@ -39,14 +40,14 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = hiltView
 
         StarbucksColumn {
             Header(title = stringResource(id = R.string.home_header_logged_out))
-            ActionItemsRow()
+            ActionItemsRow(navController = navController)
             NewsSection(news)
         }
     }
 }
 
 @Composable
-fun ActionItemsRow(isLoggedIn: Boolean = false) {
+fun ActionItemsRow(isLoggedIn: Boolean = false, navController: NavController) {
 
     Row(
         modifier = Modifier
@@ -70,7 +71,9 @@ fun ActionItemsRow(isLoggedIn: Boolean = false) {
         Icon(
             imageVector = Icons.Outlined.Settings,
             contentDescription = stringResource(id = R.string.settings),
-            modifier = Modifier.clickable { }
+            modifier = Modifier.clickable {
+                navController.navigate(Screen.Settings.route)
+            }
         )
     }
 

@@ -12,5 +12,6 @@ import com.ruthvikbr.starbucksindiacompose.ui.utils.Screen
 fun NavGraphBuilder.dashboardRoute(navController: NavController) {
     navigation(startDestination = Screen.Dashboard.route, route = Route.Dashboard.route) {
         composable(Screen.Dashboard.route) { DashboardScreen(navController) }
+        composable(Screen.Settings.route){ SettingsScreen(navController = navController) }
     }
 }

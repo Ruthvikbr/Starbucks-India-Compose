@@ -7,9 +7,9 @@ sealed class Screen (val route:String){
     object Order:Screen("order")
     object Gift:Screen("gift")
     object Stores:Screen("stores")
+    object Settings:Screen("settings")
 }
 
 sealed class Route(val route: String) {
     object Dashboard : Route("dashboardRoute")
-    object DashboardBottomNav: Route("dashboardBottomNav")
 }
