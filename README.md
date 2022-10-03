@@ -28,7 +28,6 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
-    <th>Home</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
@@ -40,7 +39,6 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
-    <th>Home</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
