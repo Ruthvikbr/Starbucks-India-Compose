@@ -80,7 +80,7 @@ fun Loader() {
             )
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
-                    "Your coffee is being prepared",
+                    "Your order is being processed",
                     size.width / 2,
                     size.height * 0.75f,
                     Paint().apply {
