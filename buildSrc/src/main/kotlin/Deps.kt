@@ -64,8 +64,10 @@ object Dependencies {
     }
 
     object ANDROID {
-        const val LIFECYCLE_RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
-        const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
+        const val LIFECYCLE_RUNTIME_KTX =
+            "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
+        const val LIFECYCLE_VIEWMODEL_KTX =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
         const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel:$LIFECYCLE_VERSION"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
         const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${SPLASH_SCREEN_VERSION}"
@@ -79,7 +81,8 @@ object Dependencies {
 
     object DI {
         const val HILT_ANDROID = "com.google.dagger:hilt-android:${DAGGER_VERSION}"
-        const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${DAGGER_VERSION}"
+        const val HILT_ANDROID_COMPILER =
+            "com.google.dagger:hilt-android-compiler:${DAGGER_VERSION}"
         const val HILT_COMPILER = "androidx.hilt:hilt-compiler:1.0.0"
         const val HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:1.0.0"
         const val HILT_CORE = "com.google.dagger:hilt-core:$DAGGER_VERSION"

@@ -1,15 +1,16 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(Dependencies.BUILDPLUGINS.ANDROID_LIBRARY_PLUGIN)
+    id(Dependencies.BUILDPLUGINS.KOTLIN_ANDROID_PLUGIN)
+    id(Dependencies.BUILDPLUGINS.KOTLIN_KAPT)
 }
 
 android {
-    namespace = "com.starbuckscompose.navigation"
-    compileSdk = 32
+    namespace = (ProjectProperties.NAVIGATION_NAMESPACE)
+    compileSdk = (ProjectProperties.COMPILE_SDK)
 
     defaultConfig {
-        minSdk = 24
-        targetSdk = 32
+        minSdk = (ProjectProperties.MIN_SDK)
+        targetSdk = (ProjectProperties.TARGET_SDK)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,10 +36,12 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation(Dependencies.ANDROID.APP_COMPAT)
+    implementation(Dependencies.KOTLIN.KTX_CORE)
+    api(Dependencies.ASYNC.COROUTINES)
+    api(Dependencies.ASYNC.COROUTINES_ANDROID)
+
+    implementation(Dependencies.KOTLIN.KT_STD)
+    implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
+    implementation(Dependencies.DI.HILT_NAVIGATION_COMPOSE)
 }

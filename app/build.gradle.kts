@@ -55,13 +55,12 @@ dependencies {
 
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":data")))
-
+    implementation(project(mapOf("path" to ":navigation")))
     implementation(Dependencies.COMPOSE.COMPOSE_UI)
     implementation(Dependencies.COMPOSE.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
-    implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
-    implementation(project(mapOf("path" to ":navigation")))
+
 
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)

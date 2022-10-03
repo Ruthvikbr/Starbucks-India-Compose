@@ -9,7 +9,7 @@ buildscript {
         classpath(Dependencies.BUILDPLUGINS.DAGGER_HILT_PLUGIN)
         classpath(Dependencies.BUILDPLUGINS.KOTLIN_GRADLE_PLUGIN)
         classpath(kotlin("serialization", version = Dependencies.VERSIONS.KOTLIN_VERSION))
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
     }
 }
 allprojects {

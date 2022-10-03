@@ -7,8 +7,7 @@
 
 ## Roadmap
 
-- [ ] Jetpack compose clone
-- [ ] Build backend with Ktor and Frontend integration
+- [] Jetpack compose clone
 
 ## Stack
 
@@ -44,3 +43,7 @@
     <td><img src = "art/images/splash.png" width=240/></td>
   </tr>
 </table>
+
+## Inspiration
+
+[Discord Compose clone by Anmol Verma] (https://github.com/Anmol92verma/DiscordJetpackCompose)
