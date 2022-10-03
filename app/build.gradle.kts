@@ -61,6 +61,7 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
+    implementation(project(mapOf("path" to ":navigation")))
 
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)
