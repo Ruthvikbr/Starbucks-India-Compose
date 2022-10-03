@@ -32,7 +32,6 @@
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
-    <td><img src = "art/images/home_light.png" width=240/></td>
   </tr>
 </table>
 
@@ -45,6 +44,5 @@
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
-    <td><img src = "art/images/home_dark.png" width=240/></td>
   </tr>
 </table>
