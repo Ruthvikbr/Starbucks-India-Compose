@@ -28,11 +28,9 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
-    <th>Home</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
-    <td><img src = "art/images/home_light.png" width=240/></td>
   </tr>
 </table>
 
@@ -41,10 +39,8 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
-    <th>Home</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
-    <td><img src = "art/images/home_dark.png" width=240/></td>
   </tr>
 </table>
