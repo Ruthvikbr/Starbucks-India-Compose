@@ -46,4 +46,4 @@
 
 ## Inspiration
 
-[Discord Compose clone by Anmol Verma] (https://github.com/Anmol92verma/DiscordJetpackCompose)
+[Discord Compose clone by Anmol Verma](https://github.com/Anmol92verma/DiscordJetpackCompose)

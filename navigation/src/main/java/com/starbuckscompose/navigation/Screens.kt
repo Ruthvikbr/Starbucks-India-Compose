@@ -9,6 +9,7 @@ sealed class StarbucksScreen(
     val name:String = route.appendArguments(navArguments)
 
     object Dashboard : StarbucksScreen("dashboard")
+    object Home : StarbucksScreen("home")
     object Profile : StarbucksScreen("profile")
     object Settings : StarbucksScreen("settings")
     object Order : StarbucksScreen("order")
@@ -16,7 +17,8 @@ sealed class StarbucksScreen(
 }
 
 sealed class StarbucksRoute(val name:String){
-    object DashboardRoute : StarbucksRoute("order_route")
+    object DashboardRoute : StarbucksRoute("dashboard_route")
+    object DashboardBottomNavRoute : StarbucksRoute("dashboard_bottom_nav_route")
 }
 
 private fun String.appendArguments(navArguments: List<NamedNavArgument>): String {
