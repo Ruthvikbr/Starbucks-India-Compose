@@ -1,4 +1,4 @@
-package com.ruthvikbr.starbucksindiacompose.ui.screens
+package com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing
 
 import android.graphics.Paint
 import androidx.compose.animation.core.animateFloatAsState
@@ -26,9 +26,10 @@ import androidx.compose.ui.unit.IntSize
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.CoffeeColor
 import com.ruthvikbr.starbucksindiacompose.ui.theme.LightGreen
+import com.starbuckscompose.navigation.ComposeNavigator
 
 @Composable
-fun Loader() {
+fun OrderProcessing(composeNavigator: ComposeNavigator) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -92,10 +93,4 @@ fun Loader() {
             }
         }
     }
-}
-
-@Preview(showSystemUi = true)
-@Composable
-fun PreviewSplash() {
-    Loader()
 }
