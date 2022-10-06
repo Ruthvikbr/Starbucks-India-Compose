@@ -50,6 +50,7 @@ object Dependencies {
     }
 
     object COMPOSE {
+        private const val ACCOMPANIST_VERSION = "0.24.13-rc"
         const val COMPOSE_UI = "androidx.compose.ui:ui:$COMPOSE_VERSION"
         const val COMPOSE_MATERIAL = "androidx.compose.material:material:$COMPOSE_VERSION"
         const val COMPOSE_TOOLING = "androidx.compose.ui:ui-tooling:${COMPOSE_VERSION}"
@@ -61,6 +62,8 @@ object Dependencies {
         const val COMPOSE_NAVIGATION = "androidx.navigation:navigation-compose:$NAV_VERSION"
         const val COIL_COMPOSE = "io.coil-kt:coil-compose:${COMPOSE_COIL_VERSION}"
         const val ACCOMPANIST_COIL = "com.google.accompanist:accompanist-coil:0.14.0"
+        const val ACCOMPANIST_PAGER = "com.google.accompanist:accompanist-pager:$ACCOMPANIST_VERSION"
+        const val ACCOMPANIST_PAGER_INDICATOR = "com.google.accompanist:accompanist-pager-indicators:$ACCOMPANIST_VERSION"
     }
 
     object ANDROID {

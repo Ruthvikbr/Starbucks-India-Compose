@@ -1,8 +1,8 @@
 package com.ruthvikbr.domain.repo
 
-import com.ruthvikbr.domain.models.DMNewsItem
+import com.ruthvikbr.domain.models.DMCarouselItem
 import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
-    fun fetchNewsItems(): Flow<List<DMNewsItem>>
+    fun fetchCarouselItems(): Flow<List<DMCarouselItem>>
 }

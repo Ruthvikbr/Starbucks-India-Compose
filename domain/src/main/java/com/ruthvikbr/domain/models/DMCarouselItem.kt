@@ -1,8 +1,7 @@
 package com.ruthvikbr.domain.models
 
-data class DMNewsItem(
+data class DMCarouselItem(
     val itemId:Int,
-    val category:String,
     val title:String,
     val image:String,
     val description:String

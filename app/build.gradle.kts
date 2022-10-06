@@ -90,4 +90,7 @@ dependencies {
     /* Async */
     implementation(Dependencies.ASYNC.COROUTINES)
     implementation(Dependencies.ASYNC.COROUTINES_ANDROID)
+
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER)
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER_INDICATOR)
 }
