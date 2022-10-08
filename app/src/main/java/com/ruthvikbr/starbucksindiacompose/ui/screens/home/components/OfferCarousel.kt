@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,6 +22,8 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import com.ruthvikbr.domain.models.DMCarouselItem
+import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
+import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 
 @OptIn(ExperimentalPagerApi::class)
@@ -30,6 +34,12 @@ fun OfferCarousel(items: List<DMCarouselItem>) {
 
     if (items.isNotEmpty()) {
         Column {
+            Text(
+                text = "Latest updates",
+                style = MaterialTheme.typography.h4,
+                color = HouseGreen
+            )
+            SpacerComponent(spaceInDp = 16.dp)
             HorizontalPager(
                 count = items.size,
                 state = pagerState,

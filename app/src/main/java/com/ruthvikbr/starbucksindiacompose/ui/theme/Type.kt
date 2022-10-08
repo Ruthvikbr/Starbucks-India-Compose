@@ -28,7 +28,7 @@ val StarbucksTypography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
-    h4 = TextStyle(
+    h2 = TextStyle(
         fontFamily = SourceSansFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 32.sp
@@ -38,9 +38,9 @@ val StarbucksTypography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp
     ),
-    body2 = TextStyle(
+    h4 = TextStyle(
         fontFamily = SourceSansFontFamily,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 26.sp
     ),
     subtitle1 = TextStyle(
