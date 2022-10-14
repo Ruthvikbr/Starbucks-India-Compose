@@ -2,6 +2,7 @@ package com.ruthvikbr.domain.di
 
 import com.ruthvikbr.domain.repo.HomeRepository
 import com.ruthvikbr.domain.usecases.FetchCarouselItemsUseCase
+import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,4 +17,9 @@ object UseCaseModule {
     @Provides
     fun provideFetchCarouselItemsUseCase(homeRepository: HomeRepository) =
         FetchCarouselItemsUseCase(homeRepository)
+
+    @Singleton
+    @Provides
+    fun provideFetchPopularMenuItemsItemsUseCase(homeRepository: HomeRepository) =
+        FetchPopularMenuItemsUseCase(homeRepository)
 }

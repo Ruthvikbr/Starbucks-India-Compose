@@ -1,11 +1,12 @@
 package com.ruthvikbr.data.repo
 
 import com.ruthvikbr.domain.models.DMCarouselItem
+import com.ruthvikbr.domain.models.DMPopularMenuItem
 import com.ruthvikbr.domain.repo.HomeRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class HomeRepoImpl():HomeRepository {
+class HomeRepoImpl : HomeRepository {
     override fun fetchCarouselItems(): Flow<List<DMCarouselItem>> {
         val dmCarouselItemList = listOf(
             DMCarouselItem(
@@ -40,8 +41,64 @@ class HomeRepoImpl():HomeRepository {
             )
 
         )
-       return flow {
-          emit(dmCarouselItemList)
-       }
+        return flow {
+            emit(dmCarouselItemList)
+        }
+    }
+
+    override fun fetchPopularMenuItems(): Flow<List<DMPopularMenuItem>> {
+        val popularMenuItemsList = listOf(
+            DMPopularMenuItem(
+                "Hot coffee",
+                "https://iili.io/ZNfI3X.png"
+            ),
+            DMPopularMenuItem(
+                "Hot tea",
+                "https://iili.io/ZNCcnR.png"
+            ),
+            DMPopularMenuItem(
+                "Hot beverages",
+                "https://iili.io/ZNoVhG.png"
+            ),
+            DMPopularMenuItem(
+                "Cold coffee",
+                "https://iili.io/ZNokv9.png"
+            ),
+            DMPopularMenuItem(
+                "Cold beverages",
+                "https://iili.io/ZNx3vt.png"
+            ),
+            DMPopularMenuItem(
+                "Frappuccino",
+                "https://iili.io/ZNxu87.png"
+            ),
+            DMPopularMenuItem(
+                "Bottled drinks",
+                "https://iili.io/ZNxXAF.png"
+            ),
+            DMPopularMenuItem(
+                "Bakery",
+                "https://iili.io/ZNxLP4.png"
+            ),
+            DMPopularMenuItem(
+                "Desserts",
+                "https://iili.io/ZNzIWJ.png"
+            ),
+            DMPopularMenuItem(
+                "Salads",
+                "https://iili.io/ZNzaRt.png"
+            ),
+            DMPopularMenuItem(
+                "Packed foods",
+                "https://iili.io/ZNzGsf.png"
+            ),
+            DMPopularMenuItem(
+                "Croissant",
+                "https://iili.io/ZNz6dB.png"
+            ),
+        )
+        return flow {
+            emit(popularMenuItemsList)
+        }
     }
 }

@@ -27,9 +27,13 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
+    <th>Home</th>
+    <th>Home</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
+    <td><img src = "art/images/home.png" width=240/></td>
+    <td><img src = "art/images/home-2.png" width=240/></td>
   </tr>
 </table>
 
