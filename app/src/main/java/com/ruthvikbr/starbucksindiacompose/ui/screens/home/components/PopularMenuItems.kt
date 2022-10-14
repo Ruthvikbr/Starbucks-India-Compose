@@ -17,9 +17,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.ruthvikbr.domain.models.DMPopularMenuItem
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
@@ -32,7 +34,7 @@ fun PopularMenuItems(
     Column(modifier = Modifier.fillMaxWidth()) {
         SpacerComponent(spaceInDp = 16.dp)
         Text(
-            text = "Popular menu items",
+            text = stringResource(id = R.string.popular_menu_items),
             style = MaterialTheme.typography.h4,
             color = HouseGreen
         )

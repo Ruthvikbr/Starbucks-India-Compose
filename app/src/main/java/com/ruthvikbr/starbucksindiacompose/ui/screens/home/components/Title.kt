@@ -8,7 +8,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
 
@@ -22,7 +24,7 @@ fun Title() {
     ) {
         SpacerComponent(spaceInDp = 16.dp)
         Text(
-            text = "Hello Mark! \nReady for your coffee ?",
+            text = stringResource(id = R.string.user_greeting),
             style = MaterialTheme.typography.h2,
             color = AccentGreen
         )

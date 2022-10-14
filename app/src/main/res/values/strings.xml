@@ -36,4 +36,9 @@
     <string name="sign_out">Sign Out</string>
     <string name="app_version">App version %s</string>
 
+    <!-- Dashboard-->
+    <string name="popular_menu_items">Popular menu items</string>
+    <string name="user_greeting">Hello Mark! \nReady for your coffee ?</string>
+    <string name="latest_updates">Latest updates</string>
+
 </resources>

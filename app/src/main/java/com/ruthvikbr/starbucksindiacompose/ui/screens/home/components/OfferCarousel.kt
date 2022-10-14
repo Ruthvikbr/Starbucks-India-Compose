@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -22,6 +23,7 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import com.ruthvikbr.domain.models.DMCarouselItem
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
@@ -35,7 +37,7 @@ fun OfferCarousel(items: List<DMCarouselItem>) {
     if (items.isNotEmpty()) {
         Column {
             Text(
-                text = "Latest updates",
+                text = stringResource(id = R.string.latest_updates),
                 style = MaterialTheme.typography.h4,
                 color = HouseGreen
             )
