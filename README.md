@@ -18,8 +18,6 @@
 
 ## Screenshots
 
-#### Light mode
-
 <table style="width:100%">
   <tr>
     <th>Splash</th>
@@ -30,17 +28,6 @@
     <td><img src = "art/images/splash.png" width=240/></td>
     <td><img src = "art/images/home.jpg" width=240/></td>
     <td><img src = "art/images/home-2.jpg" width=240/></td>
-  </tr>
-</table>
-
-#### Dark mode
-
-<table style="width:100%">
-  <tr>
-    <th>Splash</th>
-  </tr>
-  <tr>
-    <td><img src = "art/images/splash.png" width=240/></td>
   </tr>
 </table>
 

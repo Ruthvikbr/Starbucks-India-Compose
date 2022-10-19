@@ -40,5 +40,17 @@
     <string name="popular_menu_items">Popular menu items</string>
     <string name="user_greeting">Hello Mark! \nReady for your coffee ?</string>
     <string name="latest_updates">Latest updates</string>
+    <string name="news_headline">Learn more about the \nWorld of Coffee</string>
+    <string name="news_title">Coffee Beginnings</string>
+    <string name="news_subtitle">How world\'s most traded commodity came into existences</string>
+    <string name="learn_more">Learn more</string>
+
+    <!-- News Screen-->
+    <string name="starbucks_blog">STARBUCKS | 1 min read</string>
+    <string name="starbucks_blog_content">
+        The history of coffee is rich with legend and intrigue. Coffee has grown to be one of the world’s most traded agricultural commodities and is a favorite beverage, celebrated and enjoyed across cultures and continents. \n \n
+        And it all began long ago, circa AD 800–900, with an Ethiopian goat herder, Kaldi, who noticed his goats became energetic after eating berries of a certain shrub. Curious, he tried one himself and noticed it had a similar effect. A monk who came across Kaldi and his dancing goats grew intrigued and picked some berries from the same shrub. He crushed them into a powder and added boiling water (this may have been the first-ever cup of coffee). Upon tasting the concoction and realizing it released energy, he rushed back to his monastery to share his findings.\n \n
+        The monks hailed the discovery as a “gift from the Lord,” for now they would be able to stay awake during their long prayers. Starbucks became part of coffee’s rich history in 1971, opening its first store in Seattle’s Pike Place Market.\n \n
+    </string>
 
 </resources>

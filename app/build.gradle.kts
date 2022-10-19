@@ -93,4 +93,5 @@ dependencies {
 
     implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER)
     implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER_INDICATOR)
+    implementation(Dependencies.COMPOSE.COLLAPSIBLE_TOOLBAR)
 }

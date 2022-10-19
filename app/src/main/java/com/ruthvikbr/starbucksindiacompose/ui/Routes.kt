@@ -4,6 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.ruthvikbr.starbucksindiacompose.ui.screens.dashboard.DashboardScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.home.NewsScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessing
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksRoute
@@ -19,6 +20,9 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         }
         composable(route = StarbucksScreen.OrderProcessing.name) {
             OrderProcessing(composeNavigator)
+        }
+        composable(route = StarbucksScreen.NewsScreen.name) {
+            NewsScreen(composeNavigator)
         }
     }
 }
