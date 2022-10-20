@@ -6,7 +6,7 @@ sealed class StarbucksScreen(
     val route: String,
     val navArguments: List<NamedNavArgument> = emptyList()
 ) {
-    val name:String = route.appendArguments(navArguments)
+    val name: String = route.appendArguments(navArguments)
 
     object Dashboard : StarbucksScreen("dashboard")
     object Home : StarbucksScreen("home")
@@ -17,7 +17,7 @@ sealed class StarbucksScreen(
     object NewsScreen : StarbucksScreen("news")
 }
 
-sealed class StarbucksRoute(val name:String){
+sealed class StarbucksRoute(val name: String) {
     object DashboardRoute : StarbucksRoute("dashboard_route")
     object DashboardBottomNavRoute : StarbucksRoute("dashboard_bottom_nav_route")
 }

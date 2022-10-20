@@ -91,7 +91,7 @@ fun NewsScreen(composeNavigator: ComposeNavigator) {
                         painter = painterResource(id = R.drawable.logo),
                         modifier = Modifier.size(50.dp), contentDescription = ""
                     )
-                    SpacerComponent(spaceInDp = 8.dp)
+                    SpacerComponent(spaceInDp = 16.dp, isVerticalSpace = false)
                     Text(
                         text = stringResource(id = R.string.starbucks_blog),
                         color = Color.Black.copy(alpha = 0.7f),

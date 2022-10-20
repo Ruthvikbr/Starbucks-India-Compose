@@ -44,6 +44,7 @@
     <string name="news_title">Coffee Beginnings</string>
     <string name="news_subtitle">How world\'s most traded commodity came into existences</string>
     <string name="learn_more">Learn more</string>
+    <string name="news_for_you">We have news for you</string>
 
     <!-- News Screen-->
     <string name="starbucks_blog">STARBUCKS | 1 min read</string>
@@ -52,5 +53,6 @@
         And it all began long ago, circa AD 800–900, with an Ethiopian goat herder, Kaldi, who noticed his goats became energetic after eating berries of a certain shrub. Curious, he tried one himself and noticed it had a similar effect. A monk who came across Kaldi and his dancing goats grew intrigued and picked some berries from the same shrub. He crushed them into a powder and added boiling water (this may have been the first-ever cup of coffee). Upon tasting the concoction and realizing it released energy, he rushed back to his monastery to share his findings.\n \n
         The monks hailed the discovery as a “gift from the Lord,” for now they would be able to stay awake during their long prayers. Starbucks became part of coffee’s rich history in 1971, opening its first store in Seattle’s Pike Place Market.\n \n
     </string>
+
 
 </resources>

@@ -21,7 +21,9 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         composable(route = StarbucksScreen.OrderProcessing.name) {
             OrderProcessing(composeNavigator)
         }
-        composable(route = StarbucksScreen.NewsScreen.name) {
+        composable(
+            route = StarbucksScreen.NewsScreen.name
+        ) {
             NewsScreen(composeNavigator)
         }
     }
