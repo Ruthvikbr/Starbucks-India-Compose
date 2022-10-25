@@ -1,5 +1,6 @@
 package com.ruthvikbr.starbucksindiacompose.ui
 
+import android.util.Log
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -24,7 +25,11 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         composable(
             route = StarbucksScreen.NewsScreen.name
         ) {
-            NewsScreen(composeNavigator)
+            val title = it.arguments?.getString("title")
+            val imageUrl = it.arguments?.getString("imageUrl")
+            val content = it.arguments?.getString("content")
+
+            NewsScreen(composeNavigator,title,imageUrl,content)
         }
     }
 }

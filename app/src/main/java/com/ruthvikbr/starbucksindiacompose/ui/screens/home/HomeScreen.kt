@@ -12,6 +12,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.home.components.StarbucksN
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.components.Title
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksScreen
+import java.net.URLEncoder
 
 @Composable
 fun HomeScreen(
@@ -34,12 +35,14 @@ fun HomeScreen(
         PopularMenuItems(onMenuItemClicked = { }, popularMenuItems = popularItems)
         CoffeeNews { title, imageUrl, content ->
             composeNavigator.navigate(
-                StarbucksScreen.NewsScreen.name
+                StarbucksScreen.NewsScreen.route
+                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content")
             )
         }
         StarbucksNews(onNewsItemClicked = { title, imageUrl, content ->
             composeNavigator.navigate(
-                StarbucksScreen.NewsScreen.name,
+                StarbucksScreen.NewsScreen.route
+                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content"),
             )
         }, newsList = starbucksNews)
     }

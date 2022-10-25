@@ -1,6 +1,8 @@
 package com.starbuckscompose.navigation
 
 import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 
 sealed class StarbucksScreen(
     val route: String,
@@ -14,7 +16,19 @@ sealed class StarbucksScreen(
     object Settings : StarbucksScreen("settings")
     object Order : StarbucksScreen("order")
     object OrderProcessing : StarbucksScreen("order_processing")
-    object NewsScreen : StarbucksScreen("news")
+    object NewsScreen : StarbucksScreen(
+        "news", listOf(
+            navArgument("title") {
+                type = NavType.StringType
+            },
+            navArgument("imageUrl") {
+                type = NavType.StringType
+            },
+            navArgument("content") {
+                type = NavType.StringType
+            },
+        )
+    )
 }
 
 sealed class StarbucksRoute(val name: String) {

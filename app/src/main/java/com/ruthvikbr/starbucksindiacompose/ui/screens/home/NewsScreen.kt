@@ -26,15 +26,22 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
+import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 import com.starbuckscompose.navigation.ComposeNavigator
 import me.onebone.toolbar.CollapsingToolbarScaffold
 import me.onebone.toolbar.ScrollStrategy
 import me.onebone.toolbar.rememberCollapsingToolbarScaffoldState
 
 @Composable
-fun NewsScreen(composeNavigator: ComposeNavigator) {
+fun NewsScreen(
+    composeNavigator: ComposeNavigator,
+    title: String?,
+    imageUrl: String?,
+    content: String?
+) {
 
     val state = rememberCollapsingToolbarScaffoldState()
 
@@ -50,9 +57,9 @@ fun NewsScreen(composeNavigator: ComposeNavigator) {
                     .fillMaxWidth()
                     .height(250.dp),
             )
-            Image(
-                painter = painterResource(id = R.drawable.coffee_bg),
-                contentDescription = "",
+            AsyncImage(
+                model = rememberCoilImageRequest(data = imageUrl),
+                contentDescription = title ?: "",
                 modifier = Modifier.fillMaxWidth(),
                 contentScale = ContentScale.FillBounds
             )
@@ -76,7 +83,7 @@ fun NewsScreen(composeNavigator: ComposeNavigator) {
         ) {
             item {
                 Text(
-                    text = stringResource(id = R.string.news_title),
+                    text = title ?: "",
                     color = Color.Black,
                     style = MaterialTheme.typography.h4
                 )
@@ -86,7 +93,10 @@ fun NewsScreen(composeNavigator: ComposeNavigator) {
             }
 
             item {
-                Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Image(
                         painter = painterResource(id = R.drawable.logo),
                         modifier = Modifier.size(50.dp), contentDescription = ""
@@ -104,7 +114,7 @@ fun NewsScreen(composeNavigator: ComposeNavigator) {
             }
             item {
                 Text(
-                    text = stringResource(id = R.string.starbucks_blog_content),
+                    text = content ?: "",
                     color = Color.Black.copy(alpha = 0.5f),
                     style = MaterialTheme.typography.subtitle1.copy(fontSize = 14.sp)
                 )
