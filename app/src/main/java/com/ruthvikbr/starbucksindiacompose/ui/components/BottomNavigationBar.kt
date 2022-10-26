@@ -45,7 +45,7 @@ fun BottomNavigationBar(
                             id = item.icon
                         ),
                         contentDescription = item.label,
-                        modifier = Modifier.size(30.dp),
+                        modifier = Modifier.size(32.dp),
                         tint = if(isSelected) AccentGreen else Color.Black
                     )
                 }, label = {

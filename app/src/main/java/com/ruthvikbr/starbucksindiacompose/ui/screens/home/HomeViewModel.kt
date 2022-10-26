@@ -9,6 +9,7 @@ import com.ruthvikbr.domain.usecases.FetchCarouselItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchStarbucksNewsItemsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,8 +29,14 @@ class HomeViewModel @Inject constructor(
     private val _popularMenuItemsList = MutableStateFlow<Flow<List<DMPopularMenuItem>>>(emptyFlow())
     val popularMenuItemsList = _popularMenuItemsList.asStateFlow()
 
-    private val _starbucksNewsItemsList = MutableStateFlow<Flow<List<DMSocialNewsItem>>>(emptyFlow())
+    private val _starbucksNewsItemsList =
+        MutableStateFlow<Flow<List<DMSocialNewsItem>>>(emptyFlow())
     val starbucksNewsItemsList = _starbucksNewsItemsList.asStateFlow()
+
+    var coroutineExceptionHandler: CoroutineExceptionHandler =
+        CoroutineExceptionHandler { _, exception ->
+            exception.printStackTrace()
+        }
 
     init {
         fetchCarouselItems()
@@ -38,19 +45,19 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun fetchCarouselItems() {
-        viewModelScope.launch {
+        viewModelScope.launch(coroutineExceptionHandler) {
             _carouselItemList.value = fetchCarouselItemsUseCase()
         }
     }
 
     private fun fetchPopularMenuItems() {
-        viewModelScope.launch {
+        viewModelScope.launch(coroutineExceptionHandler) {
             _popularMenuItemsList.value = fetchPopularMenuItemsUseCase()
         }
     }
 
     private fun fetchStarbucksNewsItems() {
-        viewModelScope.launch {
+        viewModelScope.launch(coroutineExceptionHandler) {
             _starbucksNewsItemsList.value = fetchStarbucksNewsItemsUseCase()
         }
     }
