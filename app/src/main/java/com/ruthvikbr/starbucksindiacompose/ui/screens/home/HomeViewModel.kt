@@ -21,7 +21,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val fetchCarouselItemsUseCase: FetchCarouselItemsUseCase,
     private val fetchPopularMenuItemsUseCase: FetchPopularMenuItemsUseCase,
-    private val fetchStarbucksNewsItemsUseCase: FetchStarbucksNewsItemsUseCase,
+    private val fetchStarbucksNewsItemsUseCase: FetchStarbucksNewsItemsUseCase
 ) : ViewModel() {
     private val _carouselItemList = MutableStateFlow<Flow<List<DMCarouselItem>>>(emptyFlow())
     val carouselItemList = _carouselItemList.asStateFlow()

@@ -76,7 +76,7 @@ fun OrderProcessing(composeNavigator: ComposeNavigator) {
                 dstOffset = IntOffset(
                     (this.size.width / 2).toInt() - 50,
                     (this.size.height / 2).toInt() - 50
-                ),
+                )
             )
             drawContext.canvas.nativeCanvas.apply {
                 drawText(

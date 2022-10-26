@@ -24,7 +24,8 @@ android {
             isMinifyEnabled = true
 
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"), "proguard-common.txt",
+                getDefaultProguardFile("proguard-android.txt"),
+                "proguard-common.txt",
                 "proguard-specific.txt"
             )
         }
@@ -61,7 +62,6 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
     implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
-
 
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)

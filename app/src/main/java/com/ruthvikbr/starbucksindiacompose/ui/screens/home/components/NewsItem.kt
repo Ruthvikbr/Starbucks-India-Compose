@@ -34,7 +34,6 @@ fun NewsItem(
     subTitle: String,
     imageUrl: String
 ) {
-
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp - 32
 
@@ -68,7 +67,7 @@ fun NewsItem(
                 text = subTitle,
                 color = PrimaryWhite,
                 maxLines = 1,
-                style = MaterialTheme.typography.subtitle1,
+                style = MaterialTheme.typography.subtitle1
             )
             SpacerComponent(spaceInDp = 16.dp)
             Text(

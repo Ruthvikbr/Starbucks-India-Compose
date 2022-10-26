@@ -6,7 +6,7 @@ import com.starbuckscompose.navigation.StarbucksScreen
 data class NavigationItem(
     val label: String,
     val icon: Int,
-    val route: String,
+    val route: String
 )
 
 object BottomNavigationItems {
@@ -14,7 +14,6 @@ object BottomNavigationItems {
         NavigationItem("Home", R.drawable.ic_home, StarbucksScreen.Home.route),
         NavigationItem("Order", R.drawable.ic_coffee, StarbucksScreen.Order.route),
         NavigationItem("Profile", R.drawable.ic_person, StarbucksScreen.Profile.route),
-        NavigationItem("Settings", R.drawable.ic_settings, StarbucksScreen.Settings.route),
+        NavigationItem("Settings", R.drawable.ic_settings, StarbucksScreen.Settings.route)
     )
 }
-

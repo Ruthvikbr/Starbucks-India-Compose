@@ -1,4 +1,4 @@
-package com.ruthvikbr.starbucksindiacompose.ui.theme
+package com.ruthvikbr.starbucksindiacompose.ui.theme // ktlint-disable filename
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

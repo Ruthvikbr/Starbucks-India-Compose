@@ -19,7 +19,6 @@ fun HomeScreen(
     composeNavigator: ComposeNavigator,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
-
     val carouselList by viewModel.carouselItemList.collectAsState()
     val carouselItems by carouselList.collectAsState(initial = emptyList())
 
@@ -42,7 +41,7 @@ fun HomeScreen(
         StarbucksNews(onNewsItemClicked = { title, imageUrl, content ->
             composeNavigator.navigate(
                 StarbucksScreen.NewsScreen.route
-                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content"),
+                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content")
             )
         }, newsList = starbucksNews)
     }

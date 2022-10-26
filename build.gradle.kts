@@ -4,7 +4,7 @@ buildscript {
         google()
         maven("https://plugins.gradle.org/m2/")
     }
-    dependencies{
+    dependencies {
         classpath(Dependencies.BUILDPLUGINS.TOOLS_BUILD_GRADLE)
         classpath(Dependencies.BUILDPLUGINS.DAGGER_HILT_PLUGIN)
         classpath(Dependencies.BUILDPLUGINS.KOTLIN_GRADLE_PLUGIN)

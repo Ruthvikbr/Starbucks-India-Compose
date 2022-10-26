@@ -29,9 +29,8 @@ fun BottomNavigationBar(
     items: List<NavigationItem>,
     navController: NavController
 ) {
-
     BottomNavigation(
-        backgroundColor = bottom_bar_background_color,
+        backgroundColor = bottom_bar_background_color
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
@@ -41,14 +40,15 @@ fun BottomNavigationBar(
             BottomNavigationItem(
                 icon = {
                     Icon(
-                        painter =  painterResource(
+                        painter = painterResource(
                             id = item.icon
                         ),
                         contentDescription = item.label,
                         modifier = Modifier.size(32.dp),
-                        tint = if(isSelected) AccentGreen else Color.Black
+                        tint = if (isSelected) AccentGreen else Color.Black
                     )
-                }, label = {
+                },
+                label = {
                     Text(
                         text = item.label,
                         color = if (isSelected) StarbucksGreen else bottom_bar_text_color,
@@ -67,7 +67,6 @@ fun BottomNavigationBar(
                 },
                 modifier = Modifier.padding(top = 8.dp)
             )
-
         }
     }
 }
