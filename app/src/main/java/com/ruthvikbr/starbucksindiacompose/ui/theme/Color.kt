@@ -25,7 +25,6 @@ val HeadingLight = Color(0xFF626262)
 val SettingsItemTextLight = Color(0xFF1c1c1c)
 val CoffeeColor = Color(0xFF6f4e37)
 
-
 val bottom_bar_background_color
     @Composable get() = if (isSystemInDarkTheme()) {
         Color.Black

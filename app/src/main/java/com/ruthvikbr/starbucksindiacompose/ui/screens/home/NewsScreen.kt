@@ -1,6 +1,5 @@
 package com.ruthvikbr.starbucksindiacompose.ui.screens.home
 
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -42,7 +41,6 @@ fun NewsScreen(
     imageUrl: String?,
     content: String?
 ) {
-
     val state = rememberCollapsingToolbarScaffoldState()
 
     CollapsingToolbarScaffold(
@@ -55,7 +53,7 @@ fun NewsScreen(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp),
+                    .height(250.dp)
             )
             AsyncImage(
                 model = rememberCoilImageRequest(data = imageUrl),
@@ -99,7 +97,8 @@ fun NewsScreen(
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.logo),
-                        modifier = Modifier.size(50.dp), contentDescription = ""
+                        modifier = Modifier.size(50.dp),
+                        contentDescription = ""
                     )
                     SpacerComponent(spaceInDp = 16.dp, isVerticalSpace = false)
                     Text(

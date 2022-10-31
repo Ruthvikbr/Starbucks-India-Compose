@@ -6,7 +6,10 @@ import com.ruthvikbr.starbucksindiacompose.ui.components.StarbucksColumn
 import com.starbuckscompose.navigation.ComposeNavigator
 
 @Composable
-fun OrderScreen(composeNavigator: ComposeNavigator) {
+fun OrderScreen(
+    composeNavigator: ComposeNavigator,
+    selectedCategory: String?
+) {
     StarbucksColumn {
         Text(text = "Order")
     }

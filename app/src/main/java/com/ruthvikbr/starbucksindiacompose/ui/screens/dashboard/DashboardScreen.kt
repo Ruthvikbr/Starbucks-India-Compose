@@ -39,9 +39,13 @@ fun DashboardScreen(composeNavigator: ComposeNavigator) {
                         composeNavigator
                     )
                 }
-                composable(StarbucksScreen.Order.route) {
+                composable(StarbucksScreen.Order.route) { backStackEntry ->
+                    val selectedCategory = backStackEntry
+                        .arguments?.getString("selectedCategory")
+
                     OrderScreen(
-                        composeNavigator
+                        composeNavigator,
+                        selectedCategory
                     )
                 }
                 composable(StarbucksScreen.Profile.route) {

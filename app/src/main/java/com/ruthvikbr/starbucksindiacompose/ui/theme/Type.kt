@@ -19,7 +19,7 @@ val SourceSansFontFamily = FontFamily(
     Font(R.font.source_sans_pro_semi_bold, weight = FontWeight.SemiBold, style = FontStyle.Normal),
     Font(R.font.source_sans_pro_semi_bold_italic, weight = FontWeight.SemiBold, style = FontStyle.Italic),
     Font(R.font.source_sans_pro_extra_light, weight = FontWeight.Thin, style = FontStyle.Normal),
-    Font(R.font.source_sans_pro_extra_light_italic, weight = FontWeight.Thin, style = FontStyle.Italic),
+    Font(R.font.source_sans_pro_extra_light_italic, weight = FontWeight.Thin, style = FontStyle.Italic)
 )
 
 val StarbucksTypography = Typography(
@@ -52,5 +52,5 @@ val StarbucksTypography = Typography(
         fontFamily = SourceSansFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
-    ),
+    )
 )

@@ -14,10 +14,19 @@ sealed class StarbucksScreen(
     object Home : StarbucksScreen("home")
     object Profile : StarbucksScreen("profile")
     object Settings : StarbucksScreen("settings")
-    object Order : StarbucksScreen("order")
+    object Order : StarbucksScreen(
+        "order",
+        listOf(
+            navArgument("selectedCategory") {
+                type = NavType.StringType
+                nullable = true
+            }
+        )
+    )
     object OrderProcessing : StarbucksScreen("order_processing")
     object NewsScreen : StarbucksScreen(
-        "news", listOf(
+        "news",
+        listOf(
             navArgument("title") {
                 type = NavType.StringType
             },
@@ -26,7 +35,7 @@ sealed class StarbucksScreen(
             },
             navArgument("content") {
                 type = NavType.StringType
-            },
+            }
         )
     )
 }

@@ -15,8 +15,10 @@ import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 
 @Composable
-fun StarbucksNews(onNewsItemClicked: (String,String,String) -> Unit, newsList: List<DMSocialNewsItem>) {
-
+fun StarbucksNews(
+    onNewsItemClicked: (String, String, String) -> Unit,
+    newsList: List<DMSocialNewsItem>
+) {
     Column {
         SpacerComponent(spaceInDp = 16.dp)
         Text(

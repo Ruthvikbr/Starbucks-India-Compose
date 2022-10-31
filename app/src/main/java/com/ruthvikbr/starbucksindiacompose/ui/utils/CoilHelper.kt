@@ -1,4 +1,4 @@
-package com.ruthvikbr.starbucksindiacompose.ui.utils
+package com.ruthvikbr.starbucksindiacompose.ui.utils // ktlint-disable filename
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember

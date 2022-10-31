@@ -31,7 +31,6 @@ import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun OfferCarousel(items: List<DMCarouselItem>) {
-
     val pagerState = rememberPagerState(initialPage = 0)
 
     if (items.isNotEmpty()) {
@@ -44,7 +43,7 @@ fun OfferCarousel(items: List<DMCarouselItem>) {
             SpacerComponent(spaceInDp = 16.dp)
             HorizontalPager(
                 count = items.size,
-                state = pagerState,
+                state = pagerState
             ) { index ->
                 CarouselItem(dmCarouselItem = items[index])
             }
@@ -52,7 +51,7 @@ fun OfferCarousel(items: List<DMCarouselItem>) {
                 pagerState = pagerState,
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(16.dp),
+                    .padding(16.dp)
             )
         }
     } else {
@@ -67,9 +66,7 @@ fun CarouselItem(dmCarouselItem: DMCarouselItem) {
             .fillMaxWidth()
             .height(300.dp)
             .clip(RoundedCornerShape(16.dp))
-            .clickable {
-
-            }
+            .clickable {}
     ) {
         AsyncImage(
             model = rememberCoilImageRequest(data = dmCarouselItem.image),
