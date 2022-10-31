@@ -54,5 +54,8 @@
         The monks hailed the discovery as a “gift from the Lord,” for now they would be able to stay awake during their long prayers. Starbucks became part of coffee’s rich history in 1971, opening its first store in Seattle’s Pike Place Market.\n \n
     </string>
 
+    <!-- Order Screen-->
+    <string name="order_screen">Order</string>
+    <string name="currency_symbol">₹</string>
 
 </resources>

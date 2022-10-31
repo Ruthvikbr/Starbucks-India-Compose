@@ -8,8 +8,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 
 @Composable
 fun StarbucksColumn(children: @Composable () -> Unit) {
@@ -17,7 +17,7 @@ fun StarbucksColumn(children: @Composable () -> Unit) {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .background(Color.White)
+            .background(PrimaryWhite)
             .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 100.dp)
     ) {
         children()

@@ -15,7 +15,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.nativeCanvas
@@ -25,6 +24,7 @@ import androidx.compose.ui.unit.IntSize
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.CoffeeColor
 import com.ruthvikbr.starbucksindiacompose.ui.theme.LightGreen
+import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.starbuckscompose.navigation.ComposeNavigator
 
 @Composable
@@ -68,7 +68,7 @@ fun OrderProcessing(composeNavigator: ComposeNavigator) {
                 this.lineTo(size.width * 0.58f, size.height * 0.64f)
                 this.lineTo(size.width * pxRight, size.height * pY)
             }
-            drawPath(coffeeCupPath, color = Color.White)
+            drawPath(coffeeCupPath, color = PrimaryWhite)
             drawPath(coffeePath, color = CoffeeColor)
             drawImage(
                 imageBitmap,

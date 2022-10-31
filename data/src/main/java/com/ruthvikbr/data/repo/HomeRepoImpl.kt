@@ -50,51 +50,51 @@ class HomeRepoImpl : HomeRepository {
     override fun fetchPopularMenuItems(): Flow<List<DMPopularMenuItem>> {
         val popularMenuItemsList = listOf(
             DMPopularMenuItem(
-                "Hot coffee",
+                Constants.HOT_COFFEE,
                 "https://iili.io/ZNfI3X.png"
             ),
             DMPopularMenuItem(
-                "Hot tea",
+                Constants.HOT_TEA,
                 "https://iili.io/ZNCcnR.png"
             ),
             DMPopularMenuItem(
-                "Hot beverages",
+                Constants.HOT_BEVERAGES,
                 "https://iili.io/ZNoVhG.png"
             ),
             DMPopularMenuItem(
-                "Cold coffee",
+                Constants.COLD_COFFEE,
                 "https://iili.io/ZNokv9.png"
             ),
             DMPopularMenuItem(
-                "Cold beverages",
+                Constants.COLD_BEVERAGES,
                 "https://iili.io/ZNx3vt.png"
             ),
             DMPopularMenuItem(
-                "Frappuccino",
+                Constants.FRAPPUCCINO,
                 "https://iili.io/ZNxu87.png"
             ),
             DMPopularMenuItem(
-                "Bottled drinks",
+                Constants.BOTTLED_DRINKS,
                 "https://iili.io/ZNxXAF.png"
             ),
             DMPopularMenuItem(
-                "Bakery",
+                Constants.BAKERY,
                 "https://iili.io/ZNxLP4.png"
             ),
             DMPopularMenuItem(
-                "Desserts",
+                Constants.DESERTS,
                 "https://iili.io/ZNzIWJ.png"
             ),
             DMPopularMenuItem(
-                "Salads",
+                Constants.SALADS,
                 "https://iili.io/ZNzaRt.png"
             ),
             DMPopularMenuItem(
-                "Packed foods",
+                Constants.PACKED_FOODS,
                 "https://iili.io/ZNzGsf.png"
             ),
             DMPopularMenuItem(
-                "Croissant",
+                Constants.CROISSANT,
                 "https://iili.io/ZNz6dB.png"
             )
         )
