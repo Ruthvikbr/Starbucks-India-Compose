@@ -28,7 +28,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 
 @Composable
 fun PopularMenuItems(
-    onMenuItemClicked: () -> Unit,
+    onMenuItemClicked: (String) -> Unit,
     popularMenuItems: List<DMPopularMenuItem>
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
@@ -46,7 +46,7 @@ fun PopularMenuItems(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             items(popularMenuItems) { item ->
-                PopularMenuItem(onMenuItemClicked = { onMenuItemClicked() }, popularMenuItem = item)
+                PopularMenuItem(onMenuItemClicked = { onMenuItemClicked(item.label) }, popularMenuItem = item)
             }
         }
     }

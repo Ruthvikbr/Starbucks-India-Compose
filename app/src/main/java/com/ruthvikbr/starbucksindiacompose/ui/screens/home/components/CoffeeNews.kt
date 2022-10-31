@@ -11,10 +11,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
+import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 
 @Composable
 fun CoffeeNews(onNewsItemClicked: (String, String, String) -> Unit) {
-    Column(modifier = Modifier.background(Color.White)) {
+    Column(modifier = Modifier.background(PrimaryWhite)) {
         SpacerComponent(spaceInDp = 16.dp)
         Text(
             text = stringResource(id = R.string.news_headline),
