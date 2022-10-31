@@ -16,4 +16,3 @@
 
 - [ ] Bug Fix
 - [ ] New Feature
-- [ ] Enhancement

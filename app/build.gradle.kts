@@ -60,13 +60,14 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
+    implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
 
 
     testImplementation(Dependencies.TEST.JUNIT)
     androidTestImplementation(Dependencies.TEST.EXT_JUNIT)
     androidTestImplementation(Dependencies.TEST.ESPRESSO_CORE)
-    androidTestImplementation (Dependencies.COMPOSE.COMPOSE_JUNIT)
-    debugImplementation (Dependencies.COMPOSE.COMPOSE_TOOLING)
+    androidTestImplementation(Dependencies.COMPOSE.COMPOSE_JUNIT)
+    debugImplementation(Dependencies.COMPOSE.COMPOSE_TOOLING)
     debugImplementation(Dependencies.COMPOSE.COMPOSE_TEST_MANIFEST)
 
     implementation(Dependencies.ANDROID.APP_COMPAT)
@@ -89,4 +90,8 @@ dependencies {
     /* Async */
     implementation(Dependencies.ASYNC.COROUTINES)
     implementation(Dependencies.ASYNC.COROUTINES_ANDROID)
+
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER)
+    implementation(Dependencies.COMPOSE.ACCOMPANIST_PAGER_INDICATOR)
+    implementation(Dependencies.COMPOSE.COLLAPSIBLE_TOOLBAR)
 }

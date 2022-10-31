@@ -17,6 +17,7 @@ val PrimaryWhite = Color.White
 val SecondaryWhite = Color(0xFFf8f8f8)
 val SeparatorWhite = Color(0xFFd4d4d4)
 
+val OffWhiteBackground = Color(0xFFf9f9f9)
 val HeadingDark = Color(0xFFA0A0A0)
 val SettingsItemTextDark = Color(0xFFE6E6E6)
 
