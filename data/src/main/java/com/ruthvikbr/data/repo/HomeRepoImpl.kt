@@ -62,10 +62,6 @@ class HomeRepoImpl : HomeRepository {
                 "https://iili.io/ZNoVhG.png"
             ),
             DMPopularMenuItem(
-                Constants.COLD_COFFEE,
-                "https://iili.io/ZNokv9.png"
-            ),
-            DMPopularMenuItem(
                 Constants.COLD_BEVERAGES,
                 "https://iili.io/ZNx3vt.png"
             ),

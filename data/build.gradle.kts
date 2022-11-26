@@ -36,7 +36,7 @@ android {
 
 dependencies {
 
-    /*Kotlin*/
+    /* Kotlin */
     api(Dependencies.KOTLIN.KT_STD)
     api(Dependencies.ASYNC.COROUTINES)
 
@@ -44,4 +44,9 @@ dependencies {
     api(Dependencies.DI.HILT_ANDROID)
     implementation(project(mapOf("path" to ":domain")))
     kapt(Dependencies.DI.HILT_ANDROID_COMPILER)
+
+    /* Room */
+    implementation(Dependencies.ANDROID.ROOM)
+    implementation(Dependencies.ANDROID.ROOM_KTX)
+    kapt(Dependencies.ANDROID.ROOM_COMPILER)
 }

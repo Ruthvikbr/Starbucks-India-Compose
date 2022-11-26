@@ -1,7 +1,9 @@
 package com.ruthvikbr.domain.di
 
 import com.ruthvikbr.domain.repo.HomeRepository
+import com.ruthvikbr.domain.repo.OrderRepository
 import com.ruthvikbr.domain.usecases.FetchCarouselItemsUseCase
+import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchStarbucksNewsItemsUseCase
 import dagger.Module
@@ -28,4 +30,9 @@ object UseCaseModule {
     @Provides
     fun provideFetchStarbucksNewsItemsUseCase(homeRepository: HomeRepository) =
         FetchStarbucksNewsItemsUseCase(homeRepository)
+
+    @Singleton
+    @Provides
+    fun provideFetchOrderItemsUseCase(orderRepository: OrderRepository) =
+        FetchOrderItemsUseCase(orderRepository)
 }

@@ -2,7 +2,6 @@ package com.ruthvikbr.starbucksindiacompose.di
 
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksComposeNavigator
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

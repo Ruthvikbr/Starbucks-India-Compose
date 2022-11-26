@@ -10,6 +10,7 @@ val HouseGreenSecondary = Color(0xFF1e3930)
 
 val PrimaryBlack = Color.Black
 val PrimaryWhite = Color.White
+val SecondaryWhite = Color(0xFFEEEEEE)
 val CoffeeColor = Color(0xFF6f4e37)
 val BottomBarBackgroundColor = PrimaryWhite
 val BottomBarTextColor = PrimaryBlack
