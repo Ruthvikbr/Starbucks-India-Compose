@@ -27,7 +27,7 @@ class OrderViewModel @Inject constructor(
     private val _orderItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
     val orderItems = _orderItems.asStateFlow()
 
-    var coroutineExceptionHandler: CoroutineExceptionHandler =
+    private var coroutineExceptionHandler: CoroutineExceptionHandler =
         CoroutineExceptionHandler { _, exception ->
             exception.printStackTrace()
         }
