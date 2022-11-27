@@ -22,12 +22,12 @@
   <tr>
     <th>Splash</th>
     <th>Home</th>
-    <th>Home</th>
+    <th>Order</th>
   </tr>
   <tr>
     <td><img src = "art/images/splash.png" width=240/></td>
     <td><img src = "art/images/home.jpg" width=240/></td>
-    <td><img src = "art/images/home-2.jpg" width=240/></td>
+    <td><img src = "art/images/order.png" width=240/></td>
   </tr>
 </table>
 

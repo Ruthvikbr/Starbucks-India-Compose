@@ -1,3 +1,4 @@
+// ktlint-disable filename
 import Dependencies.VERSIONS.COMPOSE_COIL_VERSION
 import Dependencies.VERSIONS.COMPOSE_VERSION
 import Dependencies.VERSIONS.COROUTINES_VERSION
@@ -70,6 +71,7 @@ object Dependencies {
     }
 
     object ANDROID {
+        const val room_version = "2.4.3"
         const val LIFECYCLE_RUNTIME_KTX =
             "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
         const val LIFECYCLE_VIEWMODEL_KTX =
@@ -77,6 +79,9 @@ object Dependencies {
         const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel:$LIFECYCLE_VERSION"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
         const val SPLASH_SCREEN = "androidx.core:core-splashscreen:$SPLASH_SCREEN_VERSION"
+        const val ROOM = "androidx.room:room-runtime:$room_version"
+        const val ROOM_COMPILER = "androidx.room:room-compiler:$room_version"
+        const val ROOM_KTX = "androidx.room:room-ktx:$room_version"
     }
 
     object TEST {

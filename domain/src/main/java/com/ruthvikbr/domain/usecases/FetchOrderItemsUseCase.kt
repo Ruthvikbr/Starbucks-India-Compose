@@ -1,0 +1,8 @@
+package com.ruthvikbr.domain.usecases
+
+import com.ruthvikbr.domain.repo.OrderRepository
+import javax.inject.Inject
+
+class FetchOrderItemsUseCase @Inject constructor(private val orderRepository: OrderRepository) {
+    operator fun invoke() = orderRepository.getOrderItems()
+}

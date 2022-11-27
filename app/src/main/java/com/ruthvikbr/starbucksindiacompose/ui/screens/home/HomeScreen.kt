@@ -31,17 +31,19 @@ fun HomeScreen(
     StarbucksColumn {
         Title()
         OfferCarousel(items = carouselItems)
-        PopularMenuItems(onMenuItemClicked = { }, popularMenuItems = popularItems)
+        PopularMenuItems(onMenuItemClicked = { itemName ->
+            composeNavigator.navigate(StarbucksScreen.Order.route.plus("/$itemName"))
+        }, popularMenuItems = popularItems)
         CoffeeNews { title, imageUrl, content ->
             composeNavigator.navigate(
                 StarbucksScreen.NewsScreen.route
-                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content")
+                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content")
             )
         }
         StarbucksNews(onNewsItemClicked = { title, imageUrl, content ->
             composeNavigator.navigate(
                 StarbucksScreen.NewsScreen.route
-                    .plus("/$title/${URLEncoder.encode(imageUrl)}/$content")
+                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content")
             )
         }, newsList = starbucksNews)
     }

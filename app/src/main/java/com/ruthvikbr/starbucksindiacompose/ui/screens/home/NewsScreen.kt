@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
+import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 import com.starbuckscompose.navigation.ComposeNavigator
 import me.onebone.toolbar.CollapsingToolbarScaffold
@@ -46,7 +47,7 @@ fun NewsScreen(
     CollapsingToolbarScaffold(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White),
+            .background(PrimaryWhite),
         state = state,
         scrollStrategy = ScrollStrategy.ExitUntilCollapsed,
         toolbar = {
@@ -64,7 +65,7 @@ fun NewsScreen(
             Icon(
                 Icons.Default.KeyboardArrowLeft,
                 contentDescription = "",
-                tint = Color.White,
+                tint = PrimaryWhite,
                 modifier = Modifier
                     .pin()
                     .padding(16.dp)
