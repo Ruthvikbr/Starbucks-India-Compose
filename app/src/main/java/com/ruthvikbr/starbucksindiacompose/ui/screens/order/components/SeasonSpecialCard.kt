@@ -73,7 +73,7 @@ fun SeasonSpecialCard() {
                         color = PrimaryWhite
                     )
                     Text(
-                        text = "400",
+                        text = "$ 400",
                         style = MaterialTheme.typography.h5,
                         color = PrimaryWhite
                     )
