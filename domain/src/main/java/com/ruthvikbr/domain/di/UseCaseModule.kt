@@ -6,6 +6,7 @@ import com.ruthvikbr.domain.usecases.FetchCarouselItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchStarbucksNewsItemsUseCase
+import com.ruthvikbr.domain.usecases.UpdateOrderItemUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,4 +36,9 @@ object UseCaseModule {
     @Provides
     fun provideFetchOrderItemsUseCase(orderRepository: OrderRepository) =
         FetchOrderItemsUseCase(orderRepository)
+
+    @Singleton
+    @Provides
+    fun provideUpdateOrderItemUseCase(orderRepository: OrderRepository) =
+        UpdateOrderItemUseCase(orderRepository)
 }

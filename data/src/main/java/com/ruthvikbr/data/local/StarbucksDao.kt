@@ -15,7 +15,7 @@ interface StarbucksDao {
     fun insertOrderItem(orderItem: OrderItem)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun updateOrderItem(orderItem: OrderItem)
+    suspend fun updateOrderItem(orderItem: OrderItem)
 
     @Delete
     fun deleteOrderItem(orderItem: OrderItem)

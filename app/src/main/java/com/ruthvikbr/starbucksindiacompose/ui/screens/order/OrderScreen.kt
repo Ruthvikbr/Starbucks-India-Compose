@@ -31,6 +31,7 @@ import com.google.accompanist.pager.rememberPagerState
 import com.ruthvikbr.data.repo.Constants
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
+import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.OrderItemCard
@@ -53,6 +54,8 @@ fun OrderScreen(
     var activeIndex by remember {
         mutableStateOf(Constants.HOT_COFFEE)
     }
+
+    val coroutineScope = rememberCoroutineScope()
 
     val menuCategoriesState by viewModel.menuCategories.collectAsState()
     val menuCategories by menuCategoriesState.collectAsState(initial = emptyList())
@@ -82,7 +85,16 @@ fun OrderScreen(
             Tabs(pagerState = pagerState, menuCategories) {
                 activeIndex = it
             }
-            TabsContent(pagerState = pagerState, menuCategories, activeIndex, orderItems)
+            TabsContent(
+                pagerState = pagerState,
+                menuCategories,
+                activeIndex,
+                orderItems
+            ) { orderItem, action ->
+                coroutineScope.launch {
+                    viewModel.updateOrderItem(orderItem, action)
+                }
+            }
         }
     }
 }
@@ -133,15 +145,20 @@ fun TabsContent(
     pagerState: PagerState,
     menuCategories: List<DMPopularMenuItem>,
     activeCategory: String,
-    orderItems: List<DMOrderItem>
+    orderItems: List<DMOrderItem>,
+    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
 ) {
     HorizontalPager(state = pagerState, count = menuCategories.size) { _ ->
-        TabContentScreen(orderItems = orderItems, activeCategory)
+        TabContentScreen(orderItems = orderItems, activeCategory, updateOrderItem)
     }
 }
 
 @Composable
-fun TabContentScreen(orderItems: List<DMOrderItem>, activeCategory: String) {
+fun TabContentScreen(
+    orderItems: List<DMOrderItem>,
+    activeCategory: String,
+    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
+) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -155,7 +172,7 @@ fun TabContentScreen(orderItems: List<DMOrderItem>, activeCategory: String) {
         ) { item ->
             Column {
                 SpacerComponent(spaceInDp = 8.dp)
-                OrderItemCard(dmOrderItem = item)
+                OrderItemCard(dmOrderItem = item, updateOrderItem)
                 SpacerComponent(spaceInDp = 8.dp)
             }
         }

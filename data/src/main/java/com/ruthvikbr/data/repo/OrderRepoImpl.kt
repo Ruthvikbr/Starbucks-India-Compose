@@ -2,6 +2,7 @@ package com.ruthvikbr.data.repo
 
 import com.ruthvikbr.data.local.StarbucksDao
 import com.ruthvikbr.data.models.mappers.toDmOrderItem
+import com.ruthvikbr.data.models.mappers.toOrderItem
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.repo.OrderRepository
 import kotlinx.coroutines.flow.Flow
@@ -15,5 +16,9 @@ class OrderRepoImpl @Inject constructor(private val dao: StarbucksDao) : OrderRe
                 item.toDmOrderItem()
             }
         }
+    }
+
+    override suspend fun updateOrderItem(dmOrderItem: DMOrderItem) {
+        dao.updateOrderItem(dmOrderItem.toOrderItem())
     }
 }

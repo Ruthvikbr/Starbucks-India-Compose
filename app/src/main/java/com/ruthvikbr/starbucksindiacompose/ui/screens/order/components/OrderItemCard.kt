@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.ruthvikbr.domain.models.DMOrderItem
+import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
@@ -30,7 +31,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.SecondaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.utils.rememberCoilImageRequest
 
 @Composable
-fun OrderItemCard(dmOrderItem: DMOrderItem) {
+fun OrderItemCard(dmOrderItem: DMOrderItem, updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth().height(100.dp).clip(RoundedCornerShape(12.dp))
             .background(
@@ -65,12 +66,12 @@ fun OrderItemCard(dmOrderItem: DMOrderItem) {
                 )
             }
         }
-        Counter(productCount = dmOrderItem.itemCount, updateProductCount = {})
+        Counter(dmOrderItem = dmOrderItem, updateOrderItem = updateOrderItem)
     }
 }
 
 @Composable
-fun Counter(updateProductCount: (Int) -> Unit, productCount: Int) {
+fun Counter(updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit, dmOrderItem: DMOrderItem) {
     Row(
         modifier = Modifier.height(30.dp).padding(end = 8.dp),
         horizontalArrangement = Arrangement.SpaceEvenly,
@@ -80,10 +81,12 @@ fun Counter(updateProductCount: (Int) -> Unit, productCount: Int) {
             painter = painterResource(id = R.drawable.ic_decrease),
             contentDescription = "",
             tint = PrimaryWhite,
-            modifier = Modifier.size(24.dp).background(AccentGreen).clickable {}
+            modifier = Modifier.size(24.dp).background(AccentGreen).clickable {
+                updateOrderItem(dmOrderItem, UpdateOrderItemAction.DECREASE_PRODUCT_COUNT)
+            }
         )
         Text(
-            text = productCount.toString(),
+            text = dmOrderItem.itemCount.toString(),
             style = MaterialTheme.typography.h5,
             modifier = Modifier.size(24.dp),
             textAlign = TextAlign.Center
@@ -92,7 +95,9 @@ fun Counter(updateProductCount: (Int) -> Unit, productCount: Int) {
             painter = painterResource(id = R.drawable.ic_add),
             contentDescription = "",
             tint = PrimaryWhite,
-            modifier = Modifier.size(24.dp).background(AccentGreen).clickable {}
+            modifier = Modifier.size(24.dp).background(AccentGreen).clickable {
+                updateOrderItem(dmOrderItem, UpdateOrderItemAction.INCREASE_PRODUCT_COUNT)
+            }
         )
     }
 }

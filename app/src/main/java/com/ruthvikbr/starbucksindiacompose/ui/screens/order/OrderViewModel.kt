@@ -6,6 +6,8 @@ import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
 import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
+import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
+import com.ruthvikbr.domain.usecases.UpdateOrderItemUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow
@@ -18,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class OrderViewModel @Inject constructor(
     private val fetchPopularMenuItemsUseCase: FetchPopularMenuItemsUseCase,
-    private val fetchOrderItemsUseCase: FetchOrderItemsUseCase
+    private val fetchOrderItemsUseCase: FetchOrderItemsUseCase,
+    private val updateOrderItemUseCase: UpdateOrderItemUseCase
 ) : ViewModel() {
 
     private val _menuCategories = MutableStateFlow<Flow<List<DMPopularMenuItem>>>(emptyFlow())
@@ -46,6 +49,12 @@ class OrderViewModel @Inject constructor(
     private fun fetchOrderItems() {
         viewModelScope.launch(coroutineExceptionHandler) {
             _orderItems.value = fetchOrderItemsUseCase()
+        }
+    }
+
+    suspend fun updateOrderItem(dmOrderItem: DMOrderItem, updateOrderItemAction: UpdateOrderItemAction) {
+        viewModelScope.launch {
+            updateOrderItemUseCase(dmOrderItem, updateOrderItemAction)
         }
     }
 }

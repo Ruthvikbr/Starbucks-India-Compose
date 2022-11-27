@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface OrderRepository {
     fun getOrderItems(): Flow<List<DMOrderItem>>
+    suspend fun updateOrderItem(dmOrderItem: DMOrderItem)
 }
