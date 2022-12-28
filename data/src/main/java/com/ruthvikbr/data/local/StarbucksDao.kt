@@ -22,4 +22,7 @@ interface StarbucksDao {
 
     @Query("SELECT * FROM `order`")
     fun getOrderItems(): Flow<List<OrderItem>>
+
+    @Query("SELECT * FROM `order` WHERE itemCount >= 1")
+    fun getCartItems(): Flow<List<OrderItem>>
 }

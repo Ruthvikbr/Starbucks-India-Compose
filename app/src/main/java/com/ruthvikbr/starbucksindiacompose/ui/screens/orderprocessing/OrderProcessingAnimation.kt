@@ -28,7 +28,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.starbuckscompose.navigation.ComposeNavigator
 
 @Composable
-fun OrderProcessing(composeNavigator: ComposeNavigator) {
+fun OrderProcessingAnimation(composeNavigator: ComposeNavigator) {
     Column(
         modifier = Modifier
             .fillMaxSize()

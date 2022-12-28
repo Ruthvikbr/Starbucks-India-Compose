@@ -1,13 +1,15 @@
 package com.ruthvikbr.starbucksindiacompose.ui
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.ruthvikbr.starbucksindiacompose.ui.screens.dashboard.DashboardScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.HomeScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.NewsScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.OrderScreen
-import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessing
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessingAnimation
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.ProfileScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.SettingsScreen
 import com.starbuckscompose.navigation.ComposeNavigator
@@ -23,7 +25,7 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
             DashboardScreen(composeNavigator)
         }
         composable(route = StarbucksScreen.OrderProcessing.name) {
-            OrderProcessing(composeNavigator)
+            OrderProcessingAnimation(composeNavigator)
         }
         composable(
             route = StarbucksScreen.NewsScreen.name
@@ -38,6 +40,7 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 fun NavGraphBuilder.bottomBarRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Home.route,

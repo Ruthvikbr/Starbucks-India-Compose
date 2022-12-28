@@ -3,6 +3,7 @@ package com.ruthvikbr.domain.di
 import com.ruthvikbr.domain.repo.HomeRepository
 import com.ruthvikbr.domain.repo.OrderRepository
 import com.ruthvikbr.domain.usecases.FetchCarouselItemsUseCase
+import com.ruthvikbr.domain.usecases.FetchCartItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchStarbucksNewsItemsUseCase
@@ -41,4 +42,9 @@ object UseCaseModule {
     @Provides
     fun provideUpdateOrderItemUseCase(orderRepository: OrderRepository) =
         UpdateOrderItemUseCase(orderRepository)
+
+    @Singleton
+    @Provides
+    fun provideFetchCartItemsUseCase(orderRepository: OrderRepository) =
+        FetchCartItemsUseCase(orderRepository)
 }
