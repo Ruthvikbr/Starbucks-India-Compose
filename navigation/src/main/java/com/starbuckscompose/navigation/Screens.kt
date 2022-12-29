@@ -24,6 +24,7 @@ sealed class StarbucksScreen(
         )
     )
     object OrderProcessing : StarbucksScreen("order_processing")
+    object Checkout : StarbucksScreen("checkout")
     object NewsScreen : StarbucksScreen(
         "news",
         listOf(

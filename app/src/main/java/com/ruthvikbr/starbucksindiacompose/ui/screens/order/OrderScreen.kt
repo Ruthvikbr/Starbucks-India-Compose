@@ -33,9 +33,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -48,6 +50,7 @@ import com.ruthvikbr.data.repo.Constants
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.OrderItemCard
@@ -85,7 +88,8 @@ fun OrderScreen(
     val cartItemsState by viewModel.cartItems.collectAsState()
     val cartItems by cartItemsState.collectAsState(initial = emptyList())
 
-    val sheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
+    val sheetState =
+        rememberBottomSheetState(initialValue = if (cartItems.isEmpty()) BottomSheetValue.Collapsed else BottomSheetValue.Expanded)
     val scaffoldState = rememberBottomSheetScaffoldState(
         bottomSheetState = sheetState
     )
@@ -105,7 +109,9 @@ fun OrderScreen(
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetContent = {
-            Checkout(cartItems = cartItems)
+            Checkout(cartItems = cartItems) {
+                composeNavigator.navigate(StarbucksScreen.Checkout.route)
+            }
         },
         sheetPeekHeight = 0.dp
     ) {
@@ -195,7 +201,7 @@ fun TabsContent(
     orderItems: List<DMOrderItem>,
     updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
 ) {
-    HorizontalPager(state = pagerState, count = menuCategories.size) { _ ->
+    HorizontalPager(state = pagerState, count = menuCategories.size) {
         TabContentScreen(orderItems = orderItems, activeCategory, updateOrderItem)
     }
 }
@@ -226,8 +232,9 @@ fun TabContentScreen(
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun Checkout(cartItems: List<DMOrderItem>) {
+fun Checkout(cartItems: List<DMOrderItem>, onCheckoutClicked: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -239,7 +246,11 @@ fun Checkout(cartItems: List<DMOrderItem>) {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "You have ${cartItems.size} items in your cart",
+            text = pluralStringResource(
+                id = R.plurals.order_summary,
+                cartItems.size,
+                cartItems.size
+            ),
             style = MaterialTheme.typography.subtitle2,
             color = PrimaryBlack,
             textAlign = TextAlign.Center
@@ -253,9 +264,10 @@ fun Checkout(cartItems: List<DMOrderItem>) {
                 .height(40.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(AccentGreen)
-                .wrapContentHeight()
                 .clickable {
-                },
+                    onCheckoutClicked()
+                }
+                .wrapContentHeight(),
             textAlign = TextAlign.Center
         )
     }

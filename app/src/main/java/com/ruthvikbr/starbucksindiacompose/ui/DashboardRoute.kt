@@ -9,13 +9,15 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.dashboard.DashboardScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.HomeScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.NewsScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.OrderScreen
-import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessingAnimation
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.CheckoutScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessingScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.ProfileScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.SettingsScreen
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksRoute
 import com.starbuckscompose.navigation.StarbucksScreen
 
+@OptIn(ExperimentalMaterialApi::class)
 fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Dashboard.name,
@@ -25,7 +27,7 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
             DashboardScreen(composeNavigator)
         }
         composable(route = StarbucksScreen.OrderProcessing.name) {
-            OrderProcessingAnimation(composeNavigator)
+            OrderProcessingScreen(composeNavigator)
         }
         composable(
             route = StarbucksScreen.NewsScreen.name
@@ -35,6 +37,12 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
             val content = it.arguments?.getString("content")
 
             NewsScreen(composeNavigator, title, imageUrl, content)
+        }
+        composable(route = StarbucksScreen.Checkout.name) {
+            CheckoutScreen(composeNavigator = composeNavigator)
+        }
+        composable(route = StarbucksScreen.OrderProcessing.name) {
+            OrderProcessingScreen(composeNavigator = composeNavigator)
         }
         bottomBarRoute(composeNavigator)
     }
