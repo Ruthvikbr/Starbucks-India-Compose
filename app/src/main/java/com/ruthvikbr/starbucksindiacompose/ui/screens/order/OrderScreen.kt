@@ -1,23 +1,15 @@
 package com.ruthvikbr.starbucksindiacompose.ui.screens.order
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomSheetScaffold
 import androidx.compose.material.BottomSheetValue
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ScrollableTabRow
 import androidx.compose.material.Tab
 import androidx.compose.material.TabRowDefaults
@@ -35,10 +27,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.pluralStringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -51,19 +41,19 @@ import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
 import com.ruthvikbr.starbucksindiacompose.R
+import com.ruthvikbr.starbucksindiacompose.ui.components.BottomSheetComposable
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.OrderItemCard
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.SeasonSpecialCard
-import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreenSecondary
-import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.theme.SecondaryWhite
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksScreen
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalComposeUiApi::class)
 @ExperimentalMaterialApi
 @ExperimentalPagerApi
 @Composable
@@ -109,7 +99,14 @@ fun OrderScreen(
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetContent = {
-            Checkout(cartItems = cartItems) {
+            BottomSheetComposable(
+                pluralStringResource(
+                    id = R.plurals.order_summary,
+                    cartItems.size,
+                    cartItems.size
+                ),
+                "Checkout"
+            ) {
                 composeNavigator.navigate(StarbucksScreen.Checkout.route)
             }
         },
@@ -229,46 +226,5 @@ fun TabContentScreen(
                 SpacerComponent(spaceInDp = 8.dp)
             }
         }
-    }
-}
-
-@OptIn(ExperimentalComposeUiApi::class)
-@Composable
-fun Checkout(cartItems: List<DMOrderItem>, onCheckoutClicked: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(60.dp)
-            .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
-            .background(PrimaryWhite)
-            .padding(horizontal = 16.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = pluralStringResource(
-                id = R.plurals.order_summary,
-                cartItems.size,
-                cartItems.size
-            ),
-            style = MaterialTheme.typography.subtitle2,
-            color = PrimaryBlack,
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = "Checkout",
-            style = MaterialTheme.typography.subtitle2,
-            color = PrimaryWhite,
-            modifier = Modifier
-                .width(150.dp)
-                .height(40.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .background(AccentGreen)
-                .clickable {
-                    onCheckoutClicked()
-                }
-                .wrapContentHeight(),
-            textAlign = TextAlign.Center
-        )
     }
 }
