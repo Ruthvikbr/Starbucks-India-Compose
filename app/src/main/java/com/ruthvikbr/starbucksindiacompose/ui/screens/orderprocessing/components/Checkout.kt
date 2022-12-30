@@ -17,7 +17,9 @@ fun Checkout(
     billSummary: BillSummary,
     cartItems: List<DMOrderItem>,
     onBackPressed: () -> Unit,
-    onCartItemCountUpdate: (DMOrderItem, UpdateOrderItemAction) -> Unit
+    onCartItemCountUpdate: (DMOrderItem, UpdateOrderItemAction) -> Unit,
+    onPaymentStatusUpdate: (selectedPaymentMode: String) -> Unit,
+    selectedPaymentMode: String
 ) {
     Column(
         modifier = Modifier
@@ -30,5 +32,6 @@ fun Checkout(
         })
         OrderSummary(cartItems = cartItems, onCartItemCountUpdate = onCartItemCountUpdate)
         OrderBillSummary(billSummary = billSummary)
+        PaymentOptions(onPaymentStatusUpdate = onPaymentStatusUpdate, selectedPaymentMode)
     }
 }

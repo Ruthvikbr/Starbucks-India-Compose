@@ -10,11 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ContentAlpha
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -23,7 +25,12 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 
 @Composable
-fun BottomSheetComposable(primaryText: String, buttonText: String, onCheckoutClicked: () -> Unit) {
+fun BottomSheetComposable(
+    primaryText: String,
+    buttonText: String,
+    onCheckoutClicked: () -> Unit,
+    buttonEnabled: Boolean = true
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,8 +55,9 @@ fun BottomSheetComposable(primaryText: String, buttonText: String, onCheckoutCli
                 .width(150.dp)
                 .height(40.dp)
                 .clip(RoundedCornerShape(16.dp))
+                .alpha(if (buttonEnabled) 1f else ContentAlpha.disabled)
                 .background(AccentGreen)
-                .clickable {
+                .clickable(enabled = buttonEnabled) {
                     onCheckoutClicked()
                 }
                 .wrapContentHeight(),

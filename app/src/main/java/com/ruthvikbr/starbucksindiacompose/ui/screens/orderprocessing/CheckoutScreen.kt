@@ -10,7 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -21,6 +24,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.components
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.components.EmptyCheckoutScreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.SecondaryWhite
 import com.starbuckscompose.navigation.ComposeNavigator
+import com.starbuckscompose.navigation.StarbucksScreen
 import kotlinx.coroutines.launch
 
 @ExperimentalMaterialApi
@@ -35,10 +39,15 @@ fun CheckoutScreen(
     val coroutineScope = rememberCoroutineScope()
 
     val sheetState =
-        rememberBottomSheetState(initialValue = if (cartItems.isEmpty()) BottomSheetValue.Collapsed else BottomSheetValue.Expanded)
+        rememberBottomSheetState(
+            initialValue = if (cartItems.isEmpty()) BottomSheetValue.Collapsed else BottomSheetValue.Expanded
+        )
     val scaffoldState = rememberBottomSheetScaffoldState(
         bottomSheetState = sheetState
     )
+    var selectedPaymentMode by remember {
+        mutableStateOf("")
+    }
 
     LaunchedEffect(key1 = cartItems) {
         if (cartItems.isEmpty()) {
@@ -56,15 +65,16 @@ fun CheckoutScreen(
         scaffoldState = scaffoldState,
         sheetContent = {
             BottomSheetComposable(
-                "Your order total is ${
+                primaryText = "Your order total is ${
                 stringResource(
                     id = R.string.currency_symbol,
                     viewModel.calculateOrderTotal(cartItems).grandTotal
                 )
                 }",
-                "Place Order"
-            ) {
-            }
+                buttonText = "Place Order",
+                buttonEnabled = selectedPaymentMode.isNotEmpty(),
+                onCheckoutClicked = { composeNavigator.navigate(StarbucksScreen.OrderProcessing.route) }
+            )
         },
         sheetPeekHeight = 0.dp,
         modifier = Modifier.background(SecondaryWhite)
@@ -84,7 +94,11 @@ fun CheckoutScreen(
                     coroutineScope.launch {
                         viewModel.updateOrderItem(item, action)
                     }
-                }
+                },
+                onPaymentStatusUpdate = { paymentMode ->
+                    selectedPaymentMode = paymentMode
+                },
+                selectedPaymentMode
             )
         }
     }

@@ -100,15 +100,14 @@ fun OrderScreen(
         scaffoldState = scaffoldState,
         sheetContent = {
             BottomSheetComposable(
-                pluralStringResource(
+                primaryText = pluralStringResource(
                     id = R.plurals.order_summary,
                     cartItems.size,
                     cartItems.size
                 ),
-                "Checkout"
-            ) {
-                composeNavigator.navigate(StarbucksScreen.Checkout.route)
-            }
+                buttonText = "Checkout",
+                onCheckoutClicked = { composeNavigator.navigate(StarbucksScreen.Checkout.route) }
+            )
         },
         sheetPeekHeight = 0.dp
     ) {
