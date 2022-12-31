@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -26,35 +28,50 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.CoffeeColor
 import com.ruthvikbr.starbucksindiacompose.ui.theme.LightGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.starbuckscompose.navigation.ComposeNavigator
+import com.starbuckscompose.navigation.StarbucksScreen
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
+    val coroutineScope = rememberCoroutineScope()
+
+    var fillCup by rememberSaveable { mutableStateOf(false) }
+    var orderStatusText by remember {
+        mutableStateOf("Your order is being processed")
+    }
+    val pY by animateFloatAsState(
+        targetValue = if (fillCup) 0.4f else 0.64f,
+        animationSpec = tween(durationMillis = 2500),
+        finishedListener = {
+            coroutineScope.launch {
+                orderStatusText = "Your order has been placed successfully"
+                delay(500L)
+                composeNavigator.navigate(StarbucksScreen.OrderSuccess.route)
+            }
+        }
+    )
+    val pxLeft by animateFloatAsState(
+        targetValue = if (fillCup) 0.34f else 0.42f,
+        animationSpec = tween(durationMillis = 2500)
+    )
+    val pxRight by animateFloatAsState(
+        targetValue = if (fillCup) 0.66f else 0.58f,
+        animationSpec = tween(durationMillis = 2500)
+    )
+
+    LaunchedEffect(key1 = true) {
+        fillCup = true
+    }
+
+    val imageBitmap: ImageBitmap = ImageBitmap.imageResource(id = R.drawable.logo)
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(LightGreen),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        var fillCup by rememberSaveable { mutableStateOf(false) }
-        val pY by animateFloatAsState(
-            targetValue = if (fillCup) 0.4f else 0.64f,
-            animationSpec = tween(durationMillis = 2500)
-        )
-        val pxLeft by animateFloatAsState(
-            targetValue = if (fillCup) 0.34f else 0.42f,
-            animationSpec = tween(durationMillis = 2500)
-        )
-        val pxRight by animateFloatAsState(
-            targetValue = if (fillCup) 0.66f else 0.58f,
-            animationSpec = tween(durationMillis = 2500)
-        )
-
-        LaunchedEffect(key1 = true) {
-            fillCup = true
-        }
-
-        val imageBitmap: ImageBitmap = ImageBitmap.imageResource(id = R.drawable.logo)
-
         Canvas(modifier = Modifier.fillMaxSize()) {
             val coffeeCupPath = Path().apply {
                 this.moveTo(size.width * 0.30f, size.height * 0.35f)
@@ -80,7 +97,7 @@ fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
             )
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
-                    "Your order is being processed",
+                    orderStatusText,
                     size.width / 2,
                     size.height * 0.75f,
                     Paint().apply {

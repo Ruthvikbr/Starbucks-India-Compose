@@ -57,4 +57,9 @@ class CheckoutViewModel @Inject constructor(
         val tax = (subTotal * 0.18).toInt()
         return BillSummary(subTotal, tax, tax + subTotal)
     }
+
+    fun clearCart() {
+        viewModelScope.launch {
+        }
+    }
 }

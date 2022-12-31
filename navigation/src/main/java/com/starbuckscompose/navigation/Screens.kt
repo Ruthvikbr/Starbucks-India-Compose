@@ -17,9 +17,8 @@ sealed class StarbucksScreen(
     object Order : StarbucksScreen(
         "order",
         listOf(
-            navArgument("selectedCategory") {
+            navArgument("selected_category") {
                 type = NavType.StringType
-                nullable = true
             }
         )
     )
@@ -39,6 +38,7 @@ sealed class StarbucksScreen(
             }
         )
     )
+    object OrderSuccess : StarbucksScreen("order_success")
 }
 
 sealed class StarbucksRoute(val name: String) {
