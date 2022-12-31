@@ -3,6 +3,7 @@ package com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ruthvikbr.domain.models.DMOrderItem
+import com.ruthvikbr.domain.usecases.DeleteCartItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchCartItemsUseCase
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
 import com.ruthvikbr.domain.usecases.UpdateOrderItemUseCase
@@ -19,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CheckoutViewModel @Inject constructor(
     private val updateOrderItemUseCase: UpdateOrderItemUseCase,
-    private val fetchCartItemsUseCase: FetchCartItemsUseCase
+    private val fetchCartItemsUseCase: FetchCartItemsUseCase,
+    private val deleteCartItemsUseCase: DeleteCartItemsUseCase
 ) : ViewModel() {
 
     private val _cartItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
@@ -60,6 +62,7 @@ class CheckoutViewModel @Inject constructor(
 
     fun clearCart() {
         viewModelScope.launch {
+            deleteCartItemsUseCase()
         }
     }
 }

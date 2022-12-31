@@ -29,4 +29,8 @@ class OrderRepoImpl @Inject constructor(private val dao: StarbucksDao) : OrderRe
     override suspend fun updateOrderItem(dmOrderItem: DMOrderItem) {
         dao.updateOrderItem(dmOrderItem.toOrderItem())
     }
+
+    override suspend fun deleteAllCartItems() {
+        dao.deleteAllCartItems()
+    }
 }

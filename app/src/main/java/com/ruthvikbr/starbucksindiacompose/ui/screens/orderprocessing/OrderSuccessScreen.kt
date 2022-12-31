@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
@@ -30,7 +31,10 @@ import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksScreen
 
 @Composable
-fun OrderSuccessScreen(composeNavigator: ComposeNavigator) {
+fun OrderSuccessScreen(
+    composeNavigator: ComposeNavigator,
+    checkoutViewModel: CheckoutViewModel = hiltViewModel()
+) {
     Column(
         modifier = Modifier.fillMaxSize().background(LightGreen),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -64,6 +68,7 @@ fun OrderSuccessScreen(composeNavigator: ComposeNavigator) {
                 .clip(RoundedCornerShape(16.dp))
                 .background(AccentGreen)
                 .clickable {
+                    checkoutViewModel.clearCart()
                     composeNavigator.popUpTo(StarbucksScreen.Dashboard.route, false)
                 }
                 .wrapContentHeight(),
