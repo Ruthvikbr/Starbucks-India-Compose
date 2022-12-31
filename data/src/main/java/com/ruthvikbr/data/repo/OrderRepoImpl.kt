@@ -18,7 +18,19 @@ class OrderRepoImpl @Inject constructor(private val dao: StarbucksDao) : OrderRe
         }
     }
 
+    override fun getCartItems(): Flow<List<DMOrderItem>> {
+        return dao.getCartItems().map {
+            it.map { item ->
+                item.toDmOrderItem()
+            }
+        }
+    }
+
     override suspend fun updateOrderItem(dmOrderItem: DMOrderItem) {
         dao.updateOrderItem(dmOrderItem.toOrderItem())
+    }
+
+    override suspend fun deleteAllCartItems() {
+        dao.deleteAllCartItems()
     }
 }

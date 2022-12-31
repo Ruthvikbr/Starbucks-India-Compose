@@ -19,8 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
@@ -73,7 +75,7 @@ fun SeasonSpecialCard() {
                         color = PrimaryWhite
                     )
                     Text(
-                        text = "$ 400",
+                        text = stringResource(id = R.string.currency_symbol, 200),
                         style = MaterialTheme.typography.h5,
                         color = PrimaryWhite
                     )
@@ -89,7 +91,9 @@ fun SeasonSpecialCard() {
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
                         .background(PrimaryWhite)
-                        .clickable {}
+                        .clickable {
+                            // TODO: Add season special item to cart
+                        }
                         .padding(
                             vertical = 8.dp,
                             horizontal = 16.dp

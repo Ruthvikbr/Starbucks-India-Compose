@@ -56,6 +56,11 @@
 
     <!-- Order Screen-->
     <string name="order_screen">Order</string>
-    <string name="currency_symbol">₹</string>
+    <string name="currency_symbol">₹ %1$d</string>
+
+    <plurals name="order_summary">
+        <item quantity="one">You have %1$d item in your cart</item>
+        <item quantity="other">You have %1$d items in your cart</item>
+    </plurals>
 
 </resources>

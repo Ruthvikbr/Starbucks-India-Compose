@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
+import com.ruthvikbr.domain.usecases.FetchCartItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
@@ -21,7 +22,8 @@ import javax.inject.Inject
 class OrderViewModel @Inject constructor(
     private val fetchPopularMenuItemsUseCase: FetchPopularMenuItemsUseCase,
     private val fetchOrderItemsUseCase: FetchOrderItemsUseCase,
-    private val updateOrderItemUseCase: UpdateOrderItemUseCase
+    private val updateOrderItemUseCase: UpdateOrderItemUseCase,
+    private val fetchCartItemsUseCase: FetchCartItemsUseCase
 ) : ViewModel() {
 
     private val _menuCategories = MutableStateFlow<Flow<List<DMPopularMenuItem>>>(emptyFlow())
@@ -29,6 +31,9 @@ class OrderViewModel @Inject constructor(
 
     private val _orderItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
     val orderItems = _orderItems.asStateFlow()
+
+    private val _cartItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
+    val cartItems = _cartItems.asStateFlow()
 
     private var coroutineExceptionHandler: CoroutineExceptionHandler =
         CoroutineExceptionHandler { _, exception ->
@@ -38,6 +43,7 @@ class OrderViewModel @Inject constructor(
     init {
         fetchMenuCategories()
         fetchOrderItems()
+        fetchCartItems()
     }
 
     private fun fetchMenuCategories() {
@@ -55,6 +61,12 @@ class OrderViewModel @Inject constructor(
     suspend fun updateOrderItem(dmOrderItem: DMOrderItem, updateOrderItemAction: UpdateOrderItemAction) {
         viewModelScope.launch {
             updateOrderItemUseCase(dmOrderItem, updateOrderItemAction)
+        }
+    }
+
+    private fun fetchCartItems() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            _cartItems.value = fetchCartItemsUseCase()
         }
     }
 }

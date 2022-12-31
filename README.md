@@ -25,12 +25,17 @@
     <th>Order</th>
   </tr>
   <tr>
-    <td><img src = "art/images/splash.png" width=240/></td>
-    <td><img src = "art/images/home.jpg" width=240/></td>
-    <td><img src = "art/images/order.png" width=240/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/210037900-d31ad2a0-c7fc-4ef1-b00e-5b7634ec0b45.png" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/210037894-918d91e9-65d8-4594-8451-7fb63f31cea6.jpg" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/210132247-38084a7e-c5b9-49bd-8f5d-e477399d4645.gif" width=240 height=500/></td>
   </tr>
 </table>
 
 ## Inspiration
 
 [Discord Compose clone by Anmol Verma](https://github.com/Anmol92verma/DiscordJetpackCompose)
+
+
+
+
+

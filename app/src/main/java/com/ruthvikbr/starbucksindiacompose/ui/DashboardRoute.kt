@@ -1,19 +1,24 @@
 package com.ruthvikbr.starbucksindiacompose.ui
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.ruthvikbr.starbucksindiacompose.ui.screens.dashboard.DashboardScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.HomeScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.NewsScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.OrderScreen
-import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessing
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.CheckoutScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessingScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderSuccessScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.ProfileScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.SettingsScreen
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksRoute
 import com.starbuckscompose.navigation.StarbucksScreen
 
+@OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Dashboard.name,
@@ -22,8 +27,9 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         composable(route = StarbucksScreen.Dashboard.name) {
             DashboardScreen(composeNavigator)
         }
-        composable(route = StarbucksScreen.OrderProcessing.name) {
-            OrderProcessing(composeNavigator)
+        composable(route = StarbucksScreen.Order.route) {
+            val selectedCategory = it.arguments?.getString("selected_category")
+            OrderScreen(composeNavigator, selectedCategory)
         }
         composable(
             route = StarbucksScreen.NewsScreen.name
@@ -34,10 +40,20 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
 
             NewsScreen(composeNavigator, title, imageUrl, content)
         }
+        composable(route = StarbucksScreen.Checkout.name) {
+            CheckoutScreen(composeNavigator = composeNavigator)
+        }
+        composable(route = StarbucksScreen.OrderProcessing.name) {
+            OrderProcessingScreen(composeNavigator = composeNavigator)
+        }
+        composable(route = StarbucksScreen.OrderSuccess.name) {
+            OrderSuccessScreen(composeNavigator = composeNavigator)
+        }
         bottomBarRoute(composeNavigator)
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 fun NavGraphBuilder.bottomBarRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Home.route,
@@ -50,7 +66,7 @@ fun NavGraphBuilder.bottomBarRoute(composeNavigator: ComposeNavigator) {
         }
         composable(StarbucksScreen.Order.name) { backStackEntry ->
             val selectedCategory = backStackEntry
-                .arguments?.getString("selectedCategory")
+                .arguments?.getString("selected_category")
             OrderScreen(
                 composeNavigator,
                 selectedCategory

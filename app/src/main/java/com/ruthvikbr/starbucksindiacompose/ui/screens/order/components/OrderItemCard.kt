@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -61,7 +62,7 @@ fun OrderItemCard(dmOrderItem: DMOrderItem, updateOrderItem: (DMOrderItem, Updat
                     color = AccentGreen
                 )
                 Text(
-                    text = "$ ${dmOrderItem.itemPrice}",
+                    text = stringResource(id = R.string.currency_symbol, dmOrderItem.itemPrice),
                     style = MaterialTheme.typography.subtitle1
                 )
             }
