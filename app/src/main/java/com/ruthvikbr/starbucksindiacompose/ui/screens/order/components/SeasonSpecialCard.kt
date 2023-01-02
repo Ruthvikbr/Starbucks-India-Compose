@@ -57,7 +57,7 @@ fun SeasonSpecialCard() {
         ) {
             Column() {
                 Text(
-                    text = "Our Seasonal special",
+                    text = stringResource(id = R.string.seasonal_special),
                     style = MaterialTheme.typography.subtitle2,
                     color = PrimaryWhite
                 )
@@ -70,7 +70,7 @@ fun SeasonSpecialCard() {
             Row {
                 Column {
                     Text(
-                        text = "Starting from",
+                        text = stringResource(id = R.string.starting_from),
                         style = MaterialTheme.typography.subtitle2,
                         color = PrimaryWhite
                     )
@@ -85,7 +85,7 @@ fun SeasonSpecialCard() {
                     isVerticalSpace = false
                 )
                 Text(
-                    text = "Add to cart",
+                    text = stringResource(id = R.string.add_to_cart),
                     style = MaterialTheme.typography.subtitle1,
                     color = PrimaryBlack,
                     modifier = Modifier

@@ -65,13 +65,11 @@ fun CheckoutScreen(
         scaffoldState = scaffoldState,
         sheetContent = {
             BottomSheetComposable(
-                primaryText = "Your order total is ${
-                stringResource(
-                    id = R.string.currency_symbol,
+                primaryText = stringResource(
+                    R.string.order_total_text,
                     viewModel.calculateOrderTotal(cartItems).grandTotal
-                )
-                }",
-                buttonText = "Place Order",
+                ),
+                buttonText = stringResource(id = R.string.order_payment_btn_text),
                 buttonEnabled = selectedPaymentMode.isNotEmpty(),
                 onCheckoutClicked = { composeNavigator.navigate(StarbucksScreen.OrderProcessing.route) }
             )

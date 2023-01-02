@@ -7,8 +7,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.SecondaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.utils.BillSummary
 
@@ -27,7 +29,7 @@ fun Checkout(
             .verticalScroll(rememberScrollState())
             .background(SecondaryWhite)
     ) {
-        StarbucksAppBar(title = "Checkout", onBackPressed = {
+        StarbucksAppBar(title = stringResource(id = R.string.checkout), onBackPressed = {
             onBackPressed()
         })
         OrderSummary(cartItems = cartItems, onCartItemCountUpdate = onCartItemCountUpdate)
