@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -70,7 +71,9 @@ fun PopularMenuItem(
                 .clickable {
                     onMenuItemClicked()
                 },
-            contentScale = ContentScale.Fit
+            contentScale = ContentScale.Fit,
+            placeholder = painterResource(id = R.drawable.placeholder),
+            error = painterResource(id = R.drawable.placeholder)
         )
         SpacerComponent(spaceInDp = 8.dp)
         Text(text = popularMenuItem.label, style = MaterialTheme.typography.subtitle1)

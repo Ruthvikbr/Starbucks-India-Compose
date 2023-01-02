@@ -20,8 +20,8 @@ interface StarbucksDao {
     @Delete
     suspend fun deleteOrderItem(orderItem: OrderItem)
 
-    @Query("SELECT * FROM `order`")
-    fun getOrderItems(): Flow<List<OrderItem>>
+    @Query("SELECT * FROM `order` WHERE itemCategory= :activeCategory")
+    fun getOrderItems(activeCategory: String): Flow<List<OrderItem>>
 
     @Query("SELECT * FROM `order` WHERE itemCount >= 1")
     fun getCartItems(): Flow<List<OrderItem>>

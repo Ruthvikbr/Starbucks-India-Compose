@@ -35,11 +35,11 @@ fun OrderBillSummary(billSummary: BillSummary) {
             .background(PrimaryWhite)
             .padding(16.dp)
     ) {
-        BillSummaryItem(value = billSummary.cartTotal, label = "Subtotal")
-        BillSummaryItem(value = billSummary.tax, label = "Tax and Delivery charges")
+        BillSummaryItem(value = billSummary.cartTotal, label = stringResource(id = R.string.bill_summary_subtotal))
+        BillSummaryItem(value = billSummary.tax, label = stringResource(id = R.string.bill_summary_others))
         BillSummaryItem(
             value = billSummary.grandTotal,
-            label = "GrandTotal",
+            label = stringResource(id = R.string.bill_summary_grand_total),
             labelStyle = MaterialTheme.typography.subtitle1.copy(
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp

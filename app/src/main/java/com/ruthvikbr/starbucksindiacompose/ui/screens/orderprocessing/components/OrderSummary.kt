@@ -7,9 +7,11 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.OrderItemCard
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
@@ -22,7 +24,7 @@ fun OrderSummary(
     Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
         SpacerComponent(spaceInDp = 16.dp)
         Text(
-            text = "Your Order",
+            text = stringResource(id = R.string.order_summary_title),
             style = MaterialTheme.typography.h4,
             color = PrimaryBlack
         )

@@ -56,11 +56,28 @@
 
     <!-- Order Screen-->
     <string name="order_screen">Order</string>
+    <string name="checkout">Checkout</string>
     <string name="currency_symbol">₹ %1$d</string>
-
+    <string name="order_summary_title">Your Order</string>
     <plurals name="order_summary">
         <item quantity="one">You have %1$d item in your cart</item>
         <item quantity="other">You have %1$d items in your cart</item>
     </plurals>
+    <string name="order_success_instruction">You can walk in to the nearest Starbucks store to collect your order</string>
+    <string name="order_success_instruction_qr_code">Please display the QR code at the reception</string>
+    <string name="qr_code_content_description">Order QR code</string>
+    <string name="order_success_btn_text">Order again</string>
+    <string name="order_payment_btn_text">Place Order</string>
+    <string name="order_total_text">Your order total is ₹ %1$d</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="starting_from">Starting from</string>
+    <string name="seasonal_special">Our Seasonal special</string>
+
+    <string name="bill_summary_subtotal">Subtotal</string>
+    <string name="bill_summary_others">Tax and Delivery charges</string>
+    <string name="bill_summary_grand_total">Grand Total</string>
+
+    <string name="empty_screen_title">Your cart is empty</string>
+    <string name="empty_screen_btn_text">Order now</string>
 
 </resources>

@@ -15,8 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
@@ -29,10 +31,10 @@ fun EmptyCheckoutScreen(onButtonClicked: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Your cart is empty", style = MaterialTheme.typography.h4)
+        Text(text = stringResource(id = R.string.empty_screen_title), style = MaterialTheme.typography.h4)
         SpacerComponent(spaceInDp = 8.dp)
         Text(
-            text = "Order now",
+            text = stringResource(id = R.string.empty_screen_btn_text),
             modifier = Modifier
                 .fillMaxWidth(0.4f)
                 .height(40.dp)

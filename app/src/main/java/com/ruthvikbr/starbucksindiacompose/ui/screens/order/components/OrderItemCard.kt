@@ -49,7 +49,9 @@ fun OrderItemCard(dmOrderItem: DMOrderItem, updateOrderItem: (DMOrderItem, Updat
                 model = rememberCoilImageRequest(data = dmOrderItem.itemImageUrl),
                 contentDescription = dmOrderItem.itemName,
                 modifier = Modifier.size(100.dp).background(SecondaryWhite),
-                contentScale = ContentScale.Fit
+                contentScale = ContentScale.Fit,
+                placeholder = painterResource(id = R.drawable.placeholder),
+                error = painterResource(id = R.drawable.placeholder)
             )
             Column(
                 modifier = Modifier.height(100.dp).padding(start = 8.dp),

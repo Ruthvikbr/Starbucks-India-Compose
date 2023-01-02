@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class OrderRepoImpl @Inject constructor(private val dao: StarbucksDao) : OrderRepository {
-    override fun getOrderItems(): Flow<List<DMOrderItem>> {
-        return dao.getOrderItems().map {
+    override fun getOrderItems(activeCategory: String): Flow<List<DMOrderItem>> {
+        return dao.getOrderItems(activeCategory).map {
             it.map { item ->
                 item.toDmOrderItem()
             }
