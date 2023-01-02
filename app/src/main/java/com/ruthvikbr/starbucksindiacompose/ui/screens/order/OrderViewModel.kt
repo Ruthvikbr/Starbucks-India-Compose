@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,6 +31,7 @@ class OrderViewModel @Inject constructor(
     val menuCategories = _menuCategories.asStateFlow()
 
     private val _orderItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
+    private val _activeCategoryIndex = MutableStateFlow(0)
 
     private val _activeTabItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
     val activeTabItems = _activeTabItems.asStateFlow()
@@ -58,9 +58,11 @@ class OrderViewModel @Inject constructor(
 
     private fun fetchOrderItems() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _orderItems.value = fetchOrderItemsUseCase()
+            val activeCategory = _menuCategories.value.first()[0].label
+            _orderItems.value = fetchOrderItemsUseCase(activeCategory)
         }
-        onActiveTabChanged(0)
+
+        onActiveTabChanged(_activeCategoryIndex.value)
     }
 
     suspend fun updateOrderItem(dmOrderItem: DMOrderItem, updateOrderItemAction: UpdateOrderItemAction) {
@@ -77,13 +79,10 @@ class OrderViewModel @Inject constructor(
 
     fun onActiveTabChanged(activeIndex: Int) {
         viewModelScope.launch {
+            _activeCategoryIndex.value = activeIndex
             val activeCategory = _menuCategories.value.first()[activeIndex].label
 
-            val filteredList = _orderItems.value.first().filter {
-                it.itemCategory == activeCategory
-            }
-
-            _activeTabItems.value = flowOf(filteredList)
+            _activeTabItems.value = fetchOrderItemsUseCase(activeCategory)
         }
     }
 }

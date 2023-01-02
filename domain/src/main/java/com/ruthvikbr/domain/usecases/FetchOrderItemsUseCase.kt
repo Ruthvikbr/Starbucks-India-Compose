@@ -4,5 +4,5 @@ import com.ruthvikbr.domain.repo.OrderRepository
 import javax.inject.Inject
 
 class FetchOrderItemsUseCase @Inject constructor(private val orderRepository: OrderRepository) {
-    operator fun invoke() = orderRepository.getOrderItems()
+    operator fun invoke(activeCategory: String) = orderRepository.getOrderItems(activeCategory)
 }
