@@ -15,6 +15,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,7 +32,9 @@ class OrderViewModel @Inject constructor(
     val menuCategories = _menuCategories.asStateFlow()
 
     private val _orderItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
-    val orderItems = _orderItems.asStateFlow()
+
+    private val _activeTabItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
+    val activeTabItems = _activeTabItems.asStateFlow()
 
     private val _cartItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
     val cartItems = _cartItems.asStateFlow()
@@ -56,6 +60,7 @@ class OrderViewModel @Inject constructor(
         viewModelScope.launch(coroutineExceptionHandler) {
             _orderItems.value = fetchOrderItemsUseCase()
         }
+        onActiveTabChanged(0)
     }
 
     suspend fun updateOrderItem(dmOrderItem: DMOrderItem, updateOrderItemAction: UpdateOrderItemAction) {
@@ -67,6 +72,18 @@ class OrderViewModel @Inject constructor(
     private fun fetchCartItems() {
         viewModelScope.launch(coroutineExceptionHandler) {
             _cartItems.value = fetchCartItemsUseCase()
+        }
+    }
+
+    fun onActiveTabChanged(activeIndex: Int) {
+        viewModelScope.launch {
+            val activeCategory = _menuCategories.value.first()[activeIndex].label
+
+            val filteredList = _orderItems.value.first().filter {
+                it.itemCategory == activeCategory
+            }
+
+            _activeTabItems.value = flowOf(filteredList)
         }
     }
 }

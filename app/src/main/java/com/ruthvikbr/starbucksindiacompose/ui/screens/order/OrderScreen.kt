@@ -24,6 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -72,9 +73,6 @@ fun OrderScreen(
     val menuCategoriesState by viewModel.menuCategories.collectAsState()
     val menuCategories by menuCategoriesState.collectAsState(initial = emptyList())
 
-    val orderItemsState by viewModel.orderItems.collectAsState()
-    val orderItems by orderItemsState.collectAsState(initial = emptyList())
-
     val cartItemsState by viewModel.cartItems.collectAsState()
     val cartItems by cartItemsState.collectAsState(initial = emptyList())
 
@@ -83,6 +81,19 @@ fun OrderScreen(
     val scaffoldState = rememberBottomSheetScaffoldState(
         bottomSheetState = sheetState
     )
+
+    LaunchedEffect(key1 = pagerState) {
+        snapshotFlow {
+            pagerState.currentPage
+        }.collect { page ->
+            launch {
+                viewModel.onActiveTabChanged(page)
+            }
+        }
+    }
+
+    val activeTabItemsState by viewModel.activeTabItems.collectAsState()
+    val activeTabItems by activeTabItemsState.collectAsState(initial = emptyList())
 
     LaunchedEffect(key1 = cartItems) {
         if (cartItems.isEmpty()) {
@@ -136,8 +147,7 @@ fun OrderScreen(
                 TabsContent(
                     pagerState = pagerState,
                     menuCategories,
-                    activeIndex,
-                    orderItems
+                    activeTabItems
                 ) { orderItem, action ->
                     coroutineScope.launch {
                         viewModel.updateOrderItem(orderItem, action)
@@ -193,19 +203,17 @@ fun Tabs(
 fun TabsContent(
     pagerState: PagerState,
     menuCategories: List<DMPopularMenuItem>,
-    activeCategory: String,
     orderItems: List<DMOrderItem>,
     updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
 ) {
     HorizontalPager(state = pagerState, count = menuCategories.size) {
-        TabContentScreen(orderItems = orderItems, activeCategory, updateOrderItem)
+        TabContentScreen(orderItems = orderItems, updateOrderItem)
     }
 }
 
 @Composable
 fun TabContentScreen(
     orderItems: List<DMOrderItem>,
-    activeCategory: String,
     updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
 ) {
     LazyColumn(
@@ -215,9 +223,7 @@ fun TabContentScreen(
             .padding(16.dp)
     ) {
         items(
-            orderItems.filter {
-                it.itemCategory == activeCategory
-            }
+            orderItems
         ) { item ->
             Column {
                 SpacerComponent(spaceInDp = 8.dp)
