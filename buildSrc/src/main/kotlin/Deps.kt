@@ -85,9 +85,18 @@ object Dependencies {
     }
 
     object TEST {
+
+        private const val COROUTINES_VERSION = "1.3.7"
+        private const val ANDROID_JUNIT_VERSION = "1.0.0"
+        private const val ARCH_CORE_VERSION = "2.1.0"
+
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.4.0"
         const val JUNIT = "junit:junit:4.13.2"
         const val EXT_JUNIT = "androidx.test.ext:junit:1.1.3"
+        const val ANDROID_JUNIT = "androidx.test.ext:junit:$ANDROID_JUNIT_VERSION"
+        const val ARCH_CORE = "androidx.arch.core:core-testing:$ARCH_CORE_VERSION"
+        const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$COROUTINES_VERSION"
+        const val ANDROID_TEST_RUNNER = "androidx.test:runner:1.5.1"
     }
 
     object DI {
