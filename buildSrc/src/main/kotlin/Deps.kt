@@ -71,7 +71,7 @@ object Dependencies {
     }
 
     object ANDROID {
-        const val room_version = "2.4.3"
+        private const val room_version = "2.4.3"
         const val LIFECYCLE_RUNTIME_KTX =
             "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION"
         const val LIFECYCLE_VIEWMODEL_KTX =
@@ -97,6 +97,7 @@ object Dependencies {
         const val ARCH_CORE = "androidx.arch.core:core-testing:$ARCH_CORE_VERSION"
         const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$COROUTINES_VERSION"
         const val ANDROID_TEST_RUNNER = "androidx.test:runner:1.5.1"
+        const val JUNIT_JUPITER = "org.junit.jupiter:junit-jupiter:5.9.1"
     }
 
     object DI {
