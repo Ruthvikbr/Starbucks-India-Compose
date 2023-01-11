@@ -40,6 +40,9 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
 
             NewsScreen(composeNavigator, title, imageUrl, content)
         }
+
+        bottomBarRoute(composeNavigator)
+
         composable(route = StarbucksScreen.Checkout.name) {
             CheckoutScreen(composeNavigator = composeNavigator)
         }
@@ -49,7 +52,6 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         composable(route = StarbucksScreen.OrderSuccess.name) {
             OrderSuccessScreen(composeNavigator = composeNavigator)
         }
-        bottomBarRoute(composeNavigator)
     }
 }
 

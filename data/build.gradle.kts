@@ -43,10 +43,19 @@ dependencies {
     /* Dagger Hilt */
     api(Dependencies.DI.HILT_ANDROID)
     implementation(project(mapOf("path" to ":domain")))
+
     kapt(Dependencies.DI.HILT_ANDROID_COMPILER)
 
     /* Room */
     implementation(Dependencies.ANDROID.ROOM)
     implementation(Dependencies.ANDROID.ROOM_KTX)
     kapt(Dependencies.ANDROID.ROOM_COMPILER)
+
+    /* Test */
+    testImplementation(Dependencies.TEST.JUNIT)
+    androidTestImplementation(Dependencies.TEST.EXT_JUNIT)
+    androidTestImplementation(Dependencies.TEST.ANDROID_JUNIT)
+    androidTestImplementation(Dependencies.TEST.ARCH_CORE)
+    androidTestImplementation(Dependencies.TEST.COROUTINES_TEST)
+    androidTestImplementation(Dependencies.TEST.ANDROID_TEST_RUNNER)
 }
