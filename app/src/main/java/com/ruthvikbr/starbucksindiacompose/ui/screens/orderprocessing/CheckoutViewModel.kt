@@ -45,7 +45,7 @@ class CheckoutViewModel @Inject constructor(
         }
     }
 
-    private fun fetchCartItems() {
+    fun fetchCartItems() {
         viewModelScope.launch(coroutineExceptionHandler) {
             _cartItems.value = fetchCartItemsUseCase()
         }

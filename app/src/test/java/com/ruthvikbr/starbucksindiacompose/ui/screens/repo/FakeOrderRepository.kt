@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.flowOf
 
 class FakeOrderRepository : OrderRepository {
 
-    private val orderItems = mutableListOf(
+    private var orderItems = mutableListOf(
         DMOrderItem(
             "Item1",
             0,
@@ -15,7 +15,7 @@ class FakeOrderRepository : OrderRepository {
             "sample img url",
             "Sample desc 1",
             "Hot coffee",
-            0L
+            1L
         ),
         DMOrderItem(
             "Item2",
@@ -24,7 +24,7 @@ class FakeOrderRepository : OrderRepository {
             "sample img url",
             "Sample desc 2",
             "Hot coffee",
-            1L
+            2L
         ),
         DMOrderItem(
             "Item3",
@@ -33,7 +33,7 @@ class FakeOrderRepository : OrderRepository {
             "sample img url",
             "Sample desc 3",
             "Hot Tea",
-            1L
+            3L
         )
     )
 
@@ -54,15 +54,16 @@ class FakeOrderRepository : OrderRepository {
     }
 
     override suspend fun deleteAllCartItems() {
-        orderItems.removeAll {
-            true
-        }
+        orderItems = mutableListOf()
     }
 
     override suspend fun updateOrderItem(dmOrderItem: DMOrderItem) {
+        val index = orderItems.indexOfFirst {
+            it.itemId == dmOrderItem.itemId
+        }
         orderItems.removeIf {
             it.itemId == dmOrderItem.itemId
         }
-        orderItems.add(dmOrderItem)
+        orderItems.add(index, dmOrderItem)
     }
 }
