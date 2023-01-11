@@ -1,5 +1,6 @@
 package com.ruthvikbr.starbucksindiacompose.ui.screens.order
 
+import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.usecases.FetchCartItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchOrderItemsUseCase
 import com.ruthvikbr.domain.usecases.FetchPopularMenuItemsUseCase
@@ -9,6 +10,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.repo.FakeOrderRepository
 import com.ruthvikbr.starbucksindiacompose.util.MainDispatcherRule
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -44,10 +46,33 @@ class OrderViewModelTest {
         assert(viewModel.menuCategories.first().first().isNotEmpty())
     }
 
-//    @Test
-//    fun fetchMenuItems_returnsMenuItems() = runTest {
-//        assert(viewModel.activeTabItems.first().first().isNotEmpty())
-//    }
+    @Test
+    fun fetchOrderItems_returnsActiveTabMenuItems() = runTest {
+        viewModel.fetchOrderItems("Hot coffee")
+        assertEquals(
+            mutableListOf(
+                DMOrderItem(
+                    "Item1",
+                    0,
+                    200,
+                    "sample img url",
+                    "Sample desc 1",
+                    "Hot coffee",
+                    1L
+                ),
+                DMOrderItem(
+                    "Item2",
+                    2,
+                    200,
+                    "sample img url",
+                    "Sample desc 2",
+                    "Hot coffee",
+                    2L
+                )
+            ),
+            viewModel.orderItems.first().first()
+        )
+    }
 
     @Test
     fun fetchCartItems_returnsCartItems() = runTest {

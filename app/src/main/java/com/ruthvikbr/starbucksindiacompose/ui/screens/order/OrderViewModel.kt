@@ -31,6 +31,8 @@ class OrderViewModel @Inject constructor(
     val menuCategories = _menuCategories.asStateFlow()
 
     private val _orderItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
+    val orderItems = _orderItems.asStateFlow()
+
     private val _activeCategoryIndex = MutableStateFlow(0)
 
     private val _activeTabItems = MutableStateFlow<Flow<List<DMOrderItem>>>(emptyFlow())
@@ -56,16 +58,18 @@ class OrderViewModel @Inject constructor(
         }
     }
 
-    private fun fetchOrderItems() {
+    fun fetchOrderItems(activeLabel: String = "Hot coffee") {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val activeCategory = _menuCategories.value.first()[0].label
-            _orderItems.value = fetchOrderItemsUseCase(activeCategory)
+            _orderItems.value = fetchOrderItemsUseCase(activeLabel)
         }
 
         onActiveTabChanged(_activeCategoryIndex.value)
     }
 
-    suspend fun updateOrderItem(dmOrderItem: DMOrderItem, updateOrderItemAction: UpdateOrderItemAction) {
+    suspend fun updateOrderItem(
+        dmOrderItem: DMOrderItem,
+        updateOrderItemAction: UpdateOrderItemAction
+    ) {
         viewModelScope.launch {
             updateOrderItemUseCase(dmOrderItem, updateOrderItemAction)
         }
