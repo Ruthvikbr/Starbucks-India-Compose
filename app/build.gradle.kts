@@ -26,7 +26,7 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android.txt"),
                 "proguard-common.txt",
-                "proguard-specific.txt"
+                "proguard-specific.txt",
             )
         }
     }
@@ -62,6 +62,7 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
     implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
+    implementation(Dependencies.ANDROID.CONSTRAINT_LAYOUT)
 
     testImplementation(Dependencies.TEST.JUNIT)
     testImplementation(Dependencies.TEST.COROUTINES_TEST)

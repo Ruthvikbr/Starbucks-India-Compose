@@ -61,7 +61,7 @@ import kotlinx.coroutines.launch
 fun OrderScreen(
     composeNavigator: ComposeNavigator,
     selectedCategory: String?,
-    viewModel: OrderViewModel = hiltViewModel()
+    viewModel: OrderViewModel = hiltViewModel(),
 ) {
     val pagerState = rememberPagerState()
     var activeIndex by remember {
@@ -79,7 +79,7 @@ fun OrderScreen(
     val sheetState =
         rememberBottomSheetState(initialValue = if (cartItems.isEmpty()) BottomSheetValue.Collapsed else BottomSheetValue.Expanded)
     val scaffoldState = rememberBottomSheetScaffoldState(
-        bottomSheetState = sheetState
+        bottomSheetState = sheetState,
     )
 
     LaunchedEffect(key1 = pagerState) {
@@ -114,28 +114,28 @@ fun OrderScreen(
                 primaryText = pluralStringResource(
                     id = R.plurals.order_summary,
                     cartItems.size,
-                    cartItems.size
+                    cartItems.size,
                 ),
                 buttonText = "Checkout",
-                onCheckoutClicked = { composeNavigator.navigate(StarbucksScreen.Checkout.route) }
+                onCheckoutClicked = { composeNavigator.navigate(StarbucksScreen.Checkout.route) },
             )
         },
-        sheetPeekHeight = 0.dp
+        sheetPeekHeight = 0.dp,
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(HouseGreenSecondary)
                     .padding(bottom = 32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 AppBar {
                     composeNavigator.navigate(
-                        StarbucksScreen.Home.route
+                        StarbucksScreen.Home.route,
                     )
                 }
                 SeasonSpecialCard()
@@ -147,7 +147,7 @@ fun OrderScreen(
                 TabsContent(
                     pagerState = pagerState,
                     menuCategories,
-                    activeTabItems
+                    activeTabItems,
                 ) { orderItem, action ->
                     coroutineScope.launch {
                         viewModel.updateOrderItem(orderItem, action)
@@ -163,7 +163,7 @@ fun OrderScreen(
 fun Tabs(
     pagerState: PagerState,
     menuCategories: List<DMPopularMenuItem>,
-    onTabSelected: (String) -> Unit
+    onTabSelected: (String) -> Unit,
 ) {
     val scope = rememberCoroutineScope()
     ScrollableTabRow(
@@ -174,16 +174,16 @@ fun Tabs(
             TabRowDefaults.Indicator(
                 Modifier.pagerTabIndicatorOffset(pagerState, tabPositions),
                 height = 2.dp,
-                color = PrimaryWhite
+                color = PrimaryWhite,
             )
-        }
+        },
     ) {
         menuCategories.forEachIndexed { index, _ ->
             Tab(
                 text = {
                     Text(
                         text = menuCategories[index].label,
-                        color = if (pagerState.currentPage == index) Color.White else Color.LightGray
+                        color = if (pagerState.currentPage == index) Color.White else Color.LightGray,
                     )
                 },
                 selected = pagerState.currentPage == index,
@@ -192,7 +192,7 @@ fun Tabs(
                         pagerState.animateScrollToPage(index)
                         onTabSelected(menuCategories[index].label)
                     }
-                }
+                },
             )
         }
     }
@@ -204,7 +204,7 @@ fun TabsContent(
     pagerState: PagerState,
     menuCategories: List<DMPopularMenuItem>,
     orderItems: List<DMOrderItem>,
-    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
+    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit,
 ) {
     HorizontalPager(state = pagerState, count = menuCategories.size) {
         TabContentScreen(orderItems = orderItems, updateOrderItem)
@@ -214,16 +214,16 @@ fun TabsContent(
 @Composable
 fun TabContentScreen(
     orderItems: List<DMOrderItem>,
-    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit
+    updateOrderItem: (DMOrderItem, UpdateOrderItemAction) -> Unit,
 ) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .background(SecondaryWhite)
-            .padding(16.dp)
+            .padding(16.dp),
     ) {
         items(
-            orderItems
+            orderItems,
         ) { item ->
             Column {
                 SpacerComponent(spaceInDp = 8.dp)

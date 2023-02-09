@@ -82,6 +82,7 @@ object Dependencies {
         const val ROOM = "androidx.room:room-runtime:$room_version"
         const val ROOM_COMPILER = "androidx.room:room-compiler:$room_version"
         const val ROOM_KTX = "androidx.room:room-ktx:$room_version"
+        const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     }
 
     object TEST {

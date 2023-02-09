@@ -25,7 +25,7 @@ fun AppBar(onBackClicked: () -> Unit) {
             .fillMaxWidth()
             .padding(16.dp)
             .height(60.dp),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
             Icons.Default.KeyboardArrowLeft,
@@ -35,13 +35,13 @@ fun AppBar(onBackClicked: () -> Unit) {
                 .fillMaxWidth(0.1f)
                 .clickable {
                     onBackClicked()
-                }
+                },
         )
         Text(
             text = stringResource(id = R.string.order_screen),
             color = PrimaryWhite,
             modifier = Modifier.fillMaxWidth(0.8f),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

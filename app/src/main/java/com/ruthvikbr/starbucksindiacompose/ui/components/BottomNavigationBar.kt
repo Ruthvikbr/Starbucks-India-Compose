@@ -19,7 +19,6 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ruthvikbr.starbucksindiacompose.ui.theme.AccentGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.BottomBarBackgroundColor
-import com.ruthvikbr.starbucksindiacompose.ui.theme.BottomBarTextColor
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.StarbucksTypography
 import com.ruthvikbr.starbucksindiacompose.ui.utils.NavigationItem
@@ -27,10 +26,10 @@ import com.ruthvikbr.starbucksindiacompose.ui.utils.NavigationItem
 @Composable
 fun BottomNavigationBar(
     items: List<NavigationItem>,
-    navController: NavController
+    navController: NavController,
 ) {
     BottomNavigation(
-        backgroundColor = BottomBarBackgroundColor
+        backgroundColor = BottomBarBackgroundColor,
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
@@ -41,18 +40,18 @@ fun BottomNavigationBar(
                 icon = {
                     Icon(
                         painter = painterResource(
-                            id = item.icon
+                            id = item.icon,
                         ),
                         contentDescription = item.label,
-                        modifier = Modifier.size(32.dp),
-                        tint = if (isSelected) AccentGreen else Color.Black
+                        modifier = Modifier.size(24.dp),
+                        tint = if (isSelected) AccentGreen else Color.Black,
                     )
                 },
                 label = {
                     Text(
                         text = item.label,
-                        color = if (isSelected) StarbucksGreen else BottomBarTextColor,
-                        style = StarbucksTypography.h6.copy(fontSize = 12.sp)
+                        color = if (isSelected) StarbucksGreen else Color.Black,
+                        style = StarbucksTypography.h6.copy(fontSize = 12.sp),
                     )
                 },
                 selected = isSelected,
@@ -65,7 +64,7 @@ fun BottomNavigationBar(
                         restoreState = true
                     }
                 },
-                modifier = Modifier.padding(top = 8.dp)
+                modifier = Modifier.padding(top = 8.dp),
             )
         }
     }
