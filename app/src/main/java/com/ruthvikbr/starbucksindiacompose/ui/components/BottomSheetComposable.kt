@@ -29,7 +29,7 @@ fun BottomSheetComposable(
     primaryText: String,
     buttonText: String,
     onCheckoutClicked: () -> Unit,
-    buttonEnabled: Boolean = true
+    buttonEnabled: Boolean = true,
 ) {
     Row(
         modifier = Modifier
@@ -39,13 +39,13 @@ fun BottomSheetComposable(
             .background(PrimaryWhite)
             .padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
             text = primaryText,
             style = MaterialTheme.typography.subtitle2,
             color = PrimaryBlack,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
         Text(
             text = buttonText,
@@ -61,7 +61,7 @@ fun BottomSheetComposable(
                     onCheckoutClicked()
                 }
                 .wrapContentHeight(),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

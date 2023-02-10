@@ -14,6 +14,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProce
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderSuccessScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.ProfileScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.SettingsScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.stores.StoresScreen
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksRoute
 import com.starbuckscompose.navigation.StarbucksScreen
@@ -22,7 +23,7 @@ import com.starbuckscompose.navigation.StarbucksScreen
 fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Dashboard.name,
-        route = StarbucksRoute.DashboardRoute.name
+        route = StarbucksRoute.DashboardRoute.name,
     ) {
         composable(route = StarbucksScreen.Dashboard.name) {
             DashboardScreen(composeNavigator)
@@ -32,7 +33,7 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
             OrderScreen(composeNavigator, selectedCategory)
         }
         composable(
-            route = StarbucksScreen.NewsScreen.name
+            route = StarbucksScreen.NewsScreen.name,
         ) {
             val title = it.arguments?.getString("title")
             val imageUrl = it.arguments?.getString("imageUrl")
@@ -52,6 +53,12 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
         composable(route = StarbucksScreen.OrderSuccess.name) {
             OrderSuccessScreen(composeNavigator = composeNavigator)
         }
+        composable(route = StarbucksScreen.Settings.route) {
+            SettingsScreen(composeNavigator = composeNavigator)
+        }
+        composable(route = StarbucksScreen.Stores.route) {
+            StoresScreen(composeNavigator = composeNavigator)
+        }
     }
 }
 
@@ -59,11 +66,11 @@ fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
 fun NavGraphBuilder.bottomBarRoute(composeNavigator: ComposeNavigator) {
     navigation(
         startDestination = StarbucksScreen.Home.route,
-        route = StarbucksRoute.DashboardBottomNavRoute.name
+        route = StarbucksRoute.DashboardBottomNavRoute.name,
     ) {
         composable(StarbucksScreen.Home.route) {
             HomeScreen(
-                composeNavigator
+                composeNavigator,
             )
         }
         composable(StarbucksScreen.Order.name) { backStackEntry ->
@@ -71,17 +78,17 @@ fun NavGraphBuilder.bottomBarRoute(composeNavigator: ComposeNavigator) {
                 .arguments?.getString("selected_category")
             OrderScreen(
                 composeNavigator,
-                selectedCategory
+                selectedCategory,
             )
         }
         composable(StarbucksScreen.Profile.route) {
             ProfileScreen(
-                composeNavigator
+                composeNavigator,
             )
         }
-        composable(StarbucksScreen.Settings.route) {
-            SettingsScreen(
-                composeNavigator
+        composable(StarbucksScreen.Stores.route) {
+            StoresScreen(
+                composeNavigator,
             )
         }
     }

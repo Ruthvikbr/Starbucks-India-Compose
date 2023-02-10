@@ -22,7 +22,7 @@ fun DashboardScreen(composeNavigator: ComposeNavigator) {
         NavHost(
             navController = navController,
             startDestination = StarbucksRoute.DashboardBottomNavRoute.name,
-            Modifier.padding(it)
+            Modifier.padding(it),
         ) {
             bottomBarRoute(composeNavigator)
         }

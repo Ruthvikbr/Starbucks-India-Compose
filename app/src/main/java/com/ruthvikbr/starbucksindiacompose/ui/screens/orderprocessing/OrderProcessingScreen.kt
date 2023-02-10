@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
@@ -49,15 +50,15 @@ fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
                 delay(500L)
                 composeNavigator.navigate(StarbucksScreen.OrderSuccess.route)
             }
-        }
+        },
     )
     val pxLeft by animateFloatAsState(
         targetValue = if (fillCup) 0.34f else 0.42f,
-        animationSpec = tween(durationMillis = 2500)
+        animationSpec = tween(durationMillis = 2500),
     )
     val pxRight by animateFloatAsState(
         targetValue = if (fillCup) 0.66f else 0.58f,
-        animationSpec = tween(durationMillis = 2500)
+        animationSpec = tween(durationMillis = 2500),
     )
 
     LaunchedEffect(key1 = true) {
@@ -65,12 +66,13 @@ fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
     }
 
     val imageBitmap: ImageBitmap = ImageBitmap.imageResource(id = R.drawable.logo)
+    val textColor = LocalContext.current.getColor(R.color.starbucks_green)
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(LightGreen),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Canvas(modifier = Modifier.fillMaxSize()) {
             val coffeeCupPath = Path().apply {
@@ -92,8 +94,8 @@ fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
                 dstSize = IntSize(100, 100),
                 dstOffset = IntOffset(
                     (this.size.width / 2).toInt() - 50,
-                    (this.size.height / 2).toInt() - 50
-                )
+                    (this.size.height / 2).toInt() - 50,
+                ),
             )
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
@@ -102,9 +104,9 @@ fun OrderProcessingScreen(composeNavigator: ComposeNavigator) {
                     size.height * 0.75f,
                     Paint().apply {
                         textSize = 48f
-                        color = R.color.starbucks_green
+                        color = textColor
                         textAlign = Paint.Align.CENTER
-                    }
+                    },
                 )
             }
         }
