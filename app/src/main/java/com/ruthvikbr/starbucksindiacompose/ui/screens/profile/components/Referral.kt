@@ -27,10 +27,11 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.ReferralCardBackground
 fun Referral() {
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+            .fillMaxWidth(0.8f)
             .height(200.dp)
             .clip(RoundedCornerShape(16.dp))
-            .background(ReferralCardBackground),
+            .background(ReferralCardBackground)
+            .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {

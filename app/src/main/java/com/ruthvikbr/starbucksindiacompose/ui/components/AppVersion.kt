@@ -1,4 +1,4 @@
-package com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components
+package com.ruthvikbr.starbucksindiacompose.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,10 +26,13 @@ fun AppVersion() {
         modifier = Modifier
             .clip(RoundedCornerShape(4.dp))
             .background(PrimaryWhite)
-            .border(1.dp, PrimaryBlack, RoundedCornerShape(4.dp))
+            .border(
+                1.dp,
+                PrimaryBlack.copy(alpha = 0.4f),
+                RoundedCornerShape(4.dp),
+            )
             .padding(
                 horizontal = 12.dp,
-                vertical = 2.dp,
             ),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center,

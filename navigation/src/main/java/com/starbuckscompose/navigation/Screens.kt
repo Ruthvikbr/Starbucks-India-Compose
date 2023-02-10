@@ -6,7 +6,7 @@ import androidx.navigation.navArgument
 
 sealed class StarbucksScreen(
     val route: String,
-    val navArguments: List<NamedNavArgument> = emptyList()
+    val navArguments: List<NamedNavArgument> = emptyList(),
 ) {
     val name: String = route.appendArguments(navArguments)
 
@@ -19,8 +19,8 @@ sealed class StarbucksScreen(
         listOf(
             navArgument("selected_category") {
                 type = NavType.StringType
-            }
-        )
+            },
+        ),
     )
     object OrderProcessing : StarbucksScreen("order_processing")
     object Checkout : StarbucksScreen("checkout")
@@ -35,10 +35,12 @@ sealed class StarbucksScreen(
             },
             navArgument("content") {
                 type = NavType.StringType
-            }
-        )
+            },
+        ),
     )
     object OrderSuccess : StarbucksScreen("order_success")
+    object Stores : StarbucksScreen("stores")
+    object Notifications : StarbucksScreen("notifications")
 }
 
 sealed class StarbucksRoute(val name: String) {

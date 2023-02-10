@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.ui.components.AppVersion
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
-import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.AppVersion
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.Logout
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ProfileAppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ProfileDetails
@@ -23,6 +23,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreenSecondary
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.utils.ProfileMenuItemsList
 import com.starbuckscompose.navigation.ComposeNavigator
+import com.starbuckscompose.navigation.StarbucksScreen
 import java.util.*
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -34,7 +35,9 @@ fun ProfileScreen(composeNavigator: ComposeNavigator) {
                 composeNavigator.navigateUp()
             },
             onNotificationsButtonClicked = {},
-            onSettingsButtonClicked = {},
+            onSettingsButtonClicked = {
+                composeNavigator.navigate(StarbucksScreen.Settings.route)
+            },
         )
     }) { _ ->
         LazyColumn(
