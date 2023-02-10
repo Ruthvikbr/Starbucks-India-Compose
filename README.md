@@ -29,6 +29,12 @@
     <td><img src = "https://user-images.githubusercontent.com/37804253/210037894-918d91e9-65d8-4594-8451-7fb63f31cea6.jpg" width=240 height=500/></td>
     <td><img src = "https://user-images.githubusercontent.com/37804253/210132247-38084a7e-c5b9-49bd-8f5d-e477399d4645.gif" width=240 height=500/></td>
   </tr>
+  <tr>
+    <th>Profile</th>
+  </tr>
+  <tr>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/218002459-d848a448-1c91-4261-9fc0-dee24f1d52a5.png" width=240 height=500/></td>
+  </tr>
 </table>
 
 ## Inspiration
