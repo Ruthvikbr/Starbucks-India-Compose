@@ -68,6 +68,8 @@ object Dependencies {
         const val ACCOMPANIST_PAGER_INDICATOR =
             "com.google.accompanist:accompanist-pager-indicators:$ACCOMPANIST_VERSION"
         const val COLLAPSIBLE_TOOLBAR = "me.onebone:toolbar-compose:2.3.4"
+        const val GLIDE = "com.github.bumptech.glide:compose:1.0.0-alpha.1"
+        const val MATERIAL_ICONS = "androidx.compose.material:material-icons-extended:$COMPOSE_VERSION"
     }
 
     object ANDROID {

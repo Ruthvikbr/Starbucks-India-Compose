@@ -12,10 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.starbucksindiacompose.BuildConfig
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.Grey
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
@@ -38,7 +40,7 @@ fun AppVersion() {
         horizontalArrangement = Arrangement.Center,
     ) {
         Text(
-            text = "Starbucks version ",
+            text = stringResource(id = R.string.starbucks_version),
             style = MaterialTheme.typography.subtitle2,
             fontWeight = FontWeight.Light,
             color = Grey,

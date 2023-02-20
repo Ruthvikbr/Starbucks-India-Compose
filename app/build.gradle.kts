@@ -62,6 +62,8 @@ dependencies {
     implementation(Dependencies.COMPOSE.COMPOSE_UI_TOOLING_PREVIEW)
     implementation(Dependencies.COMPOSE.ACTIVITY_COMPOSE)
     implementation(Dependencies.COMPOSE.COMPOSE_NAVIGATION)
+    implementation(Dependencies.COMPOSE.GLIDE)
+    implementation(Dependencies.COMPOSE.MATERIAL_ICONS)
     implementation(Dependencies.ANDROID.CONSTRAINT_LAYOUT)
 
     testImplementation(Dependencies.TEST.JUNIT)

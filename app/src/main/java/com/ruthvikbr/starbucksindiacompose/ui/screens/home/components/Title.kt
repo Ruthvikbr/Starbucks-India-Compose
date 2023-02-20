@@ -20,13 +20,13 @@ fun Title() {
         modifier = Modifier
             .fillMaxWidth(),
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         SpacerComponent(spaceInDp = 16.dp)
         Text(
             text = stringResource(id = R.string.user_greeting),
             style = MaterialTheme.typography.h2,
-            color = AccentGreen
+            color = AccentGreen,
         )
         SpacerComponent(spaceInDp = 16.dp)
     }

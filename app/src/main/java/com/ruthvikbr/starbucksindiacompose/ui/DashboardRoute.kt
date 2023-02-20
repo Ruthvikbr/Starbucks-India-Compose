@@ -8,12 +8,14 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.ruthvikbr.starbucksindiacompose.ui.screens.dashboard.DashboardScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.HomeScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.home.NewsScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.landing.LandingScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.OrderScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.CheckoutScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderProcessingScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.orderprocessing.OrderSuccessScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.ProfileScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.SettingsScreen
+import com.ruthvikbr.starbucksindiacompose.ui.screens.signup.SignupScreen
 import com.ruthvikbr.starbucksindiacompose.ui.screens.stores.StoresScreen
 import com.starbuckscompose.navigation.ComposeNavigator
 import com.starbuckscompose.navigation.StarbucksRoute
@@ -22,9 +24,15 @@ import com.starbuckscompose.navigation.StarbucksScreen
 @OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 fun NavGraphBuilder.dashboardRoute(composeNavigator: ComposeNavigator) {
     navigation(
-        startDestination = StarbucksScreen.Dashboard.name,
+        startDestination = StarbucksScreen.Landing.name,
         route = StarbucksRoute.DashboardRoute.name,
     ) {
+        composable(route = StarbucksScreen.Landing.route) {
+            LandingScreen(composeNavigator)
+        }
+        composable(route = StarbucksScreen.SignUp.route) {
+            SignupScreen(composeNavigator)
+        }
         composable(route = StarbucksScreen.Dashboard.name) {
             DashboardScreen(composeNavigator)
         }

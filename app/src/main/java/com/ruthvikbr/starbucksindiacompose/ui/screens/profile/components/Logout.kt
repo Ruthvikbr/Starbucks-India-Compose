@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.starbucksindiacompose.R
@@ -38,7 +39,7 @@ fun Logout(onLogoutButtonClicked: () -> Unit) {
             tint = Color.Red,
         )
         Text(
-            text = "LOGOUT",
+            text = stringResource(id = R.string.logout),
             style = MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Normal),
             color = Color.Red,
             modifier = Modifier.weight(2f).padding(horizontal = 16.dp),

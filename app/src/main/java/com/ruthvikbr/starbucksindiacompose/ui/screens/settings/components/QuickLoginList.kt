@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
@@ -28,8 +29,8 @@ fun QuickLoginList(
 ) {
     Column {
         QuickLoginMode(
-            label = "Enable device lock",
-            description = "Use your current device lock",
+            label = stringResource(id = R.string.set_device_lock),
+            description = stringResource(id = R.string.set_device_lock_description),
             selected = selectedQuickLoginMode == QuickLoginModes.BIOMETRIC,
             onLoginModeChange = onLoginModeChange,
             loginMode = QuickLoginModes.BIOMETRIC,
@@ -37,8 +38,8 @@ fun QuickLoginList(
         )
         // TODO : 4 digit pin setup
         QuickLoginMode(
-            label = "Set 4 digit pin",
-            description = "Create a starbucks pin so that only you can access / Pay with your phone",
+            label = stringResource(id = R.string.set_pin),
+            description = stringResource(id = R.string.pin_description),
             selected = selectedQuickLoginMode == QuickLoginModes.DEVICE_PIN,
             onLoginModeChange = onLoginModeChange,
             loginMode = QuickLoginModes.DEVICE_PIN,
@@ -87,7 +88,7 @@ fun QuickLoginMode(
         Row {
             Image(
                 painter = painterResource(id = icon),
-                contentDescription = "Finger Print Icon",
+                contentDescription = stringResource(id = R.string.finger_print_icon),
             )
             SpacerComponent(spaceInDp = 8.dp, isVerticalSpace = false)
             Text(

@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             StarbucksIndiaComposeTheme {
                 NavHost(
                     navController = navController,
-                    startDestination = StarbucksRoute.DashboardRoute.name
+                    startDestination = StarbucksRoute.DashboardRoute.name,
                 ) {
                     dashboardRoute(composeNavigator)
                 }

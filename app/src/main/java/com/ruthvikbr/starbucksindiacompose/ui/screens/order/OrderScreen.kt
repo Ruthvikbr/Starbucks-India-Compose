@@ -30,6 +30,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -42,9 +43,9 @@ import com.ruthvikbr.domain.models.DMOrderItem
 import com.ruthvikbr.domain.models.DMPopularMenuItem
 import com.ruthvikbr.domain.usecases.UpdateOrderItemAction
 import com.ruthvikbr.starbucksindiacompose.R
+import com.ruthvikbr.starbucksindiacompose.ui.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.components.BottomSheetComposable
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
-import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.OrderItemCard
 import com.ruthvikbr.starbucksindiacompose.ui.screens.order.components.SeasonSpecialCard
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreenSecondary
@@ -133,11 +134,15 @@ fun OrderScreen(
                     .padding(bottom = 32.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                AppBar {
-                    composeNavigator.navigate(
-                        StarbucksScreen.Home.route,
-                    )
-                }
+                AppBar(
+                    title = stringResource(id = R.string.order_screen),
+                    onBackClicked = {
+                        composeNavigator.navigate(
+                            StarbucksScreen.Home.route,
+                        )
+                    },
+                    backgroundColor = HouseGreenSecondary,
+                )
                 SeasonSpecialCard()
             }
             if (menuCategories.isNotEmpty()) {
