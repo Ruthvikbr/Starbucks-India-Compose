@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextDecoration
+import com.ruthvikbr.starbucksindiacompose.ui.theme.DarkGray
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 
@@ -19,6 +20,7 @@ fun LinkerText(
     link: String,
     onLinkClicked: () -> Unit,
     horizontalArrangement: Arrangement.Horizontal = Arrangement.Center,
+    isEnabled: Boolean = true,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -33,9 +35,11 @@ fun LinkerText(
         Text(
             text = link,
             style = MaterialTheme.typography.subtitle1,
-            color = HouseGreen,
+            color = if (isEnabled) HouseGreen else DarkGray,
             modifier = Modifier.clickable {
-                onLinkClicked()
+                if (isEnabled) {
+                    onLinkClicked()
+                }
             },
             textDecoration = TextDecoration.Underline,
         )

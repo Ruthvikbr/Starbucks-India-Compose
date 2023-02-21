@@ -48,7 +48,7 @@ fun AppBar(
         Text(
             text = title,
             color = PrimaryWhite,
-            modifier = Modifier.fillMaxWidth(0.8f),
+            modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
         )
     }

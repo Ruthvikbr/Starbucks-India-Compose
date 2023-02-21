@@ -42,7 +42,7 @@ fun StarbucksTextField(
             onValueChange = onValueChange,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(45.dp)
+                .height(50.dp)
                 .drawBehind {
                     val borderWidth = 1.dp.toPx()
                     val y = size.height - borderWidth / 2
