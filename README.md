@@ -44,7 +44,7 @@
     <th>Get Help</th>
   </tr>
   <tr>
-    <td><img src = "https://user-images.githubusercontent.com/37804253/210132247-38084a7e-c5b9-49bd-8f5d-e477399d4645.gif" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/218139167-9f2360e7-08d8-4ceb-94a0-6d333ebde120.gif" width=240 height=500/></td>
     <td><img src = "https://user-images.githubusercontent.com/37804253/220557466-ebde662b-fd21-474f-aee4-f6bd1785bb3d.png" width=240 height=500/></td>
   </tr>
 </table>
