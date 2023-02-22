@@ -12,7 +12,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
@@ -27,18 +29,18 @@ fun CommunicationPreferencesList(
     Column {
         SpacerComponent(spaceInDp = 12.dp)
         Text(
-            text = "Please tell us your preferred mode of communication",
+            text = stringResource(id = R.string.communication_preference_heading),
             style = MaterialTheme.typography.h5,
             color = PrimaryBlack,
             modifier = Modifier.fillMaxWidth(0.65f),
         )
         CommunicationPreference(
-            label = "SMS",
+            label = stringResource(id = R.string.sms),
             checked = smsEnabled,
             onCheckedChanged = onSmsPreferenceChanged,
         )
         CommunicationPreference(
-            label = "E-Mail",
+            label = stringResource(id = R.string.email),
             checked = emailEnabled,
             onCheckedChanged = onEmailPreferenceChanged,
         )

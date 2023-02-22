@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
@@ -31,10 +30,4 @@ fun SettingsSubHeading(label: String) {
         SpacerComponent(spaceInDp = 16.dp)
         Divider(thickness = 0.5.dp, color = PrimaryBlack.copy(alpha = 0.3f))
     }
-}
-
-@Preview
-@Composable
-fun SettingsSubHeadingPreview() {
-    SettingsSubHeading(label = "App Permissions")
 }

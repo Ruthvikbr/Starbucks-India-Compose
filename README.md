@@ -21,21 +21,31 @@
 <table style="width:100%">
   <tr>
     <th>Splash</th>
-    <th>Home</th>
-    <th>Order</th>
+    <th>Signup</th>
+    <th>Login</th>
   </tr>
   <tr>
     <td><img src = "https://user-images.githubusercontent.com/37804253/210037900-d31ad2a0-c7fc-4ef1-b00e-5b7634ec0b45.png" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/220575879-2d84ad82-4023-4bd6-9cd3-e4d11de6587f.gif" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/220575834-e7092ee7-a14e-47ba-a617-7a8ef3af3bfb.gif" width=240 height=500/></td>
+  </tr>
+  <tr>
+    <th>Home</th>
+    <th>Order</th>
+    <th>Profile</th>
+  </tr>
+  <tr>
     <td><img src = "https://user-images.githubusercontent.com/37804253/210037894-918d91e9-65d8-4594-8451-7fb63f31cea6.jpg" width=240 height=500/></td>
     <td><img src = "https://user-images.githubusercontent.com/37804253/210132247-38084a7e-c5b9-49bd-8f5d-e477399d4645.gif" width=240 height=500/></td>
-  </tr>
-  <tr>
-    <th>Profile</th>
-    <th>Settings</th>
-  </tr>
-  <tr>
     <td><img src = "https://user-images.githubusercontent.com/37804253/218002459-d848a448-1c91-4261-9fc0-dee24f1d52a5.png" width=240 height=500/></td>
+  </tr>
+  <tr>
+    <th>Settings</th>
+    <th>Get Help</th>
+  </tr>
+  <tr>
     <td><img src = "https://user-images.githubusercontent.com/37804253/218139167-9f2360e7-08d8-4ceb-94a0-6d333ebde120.gif" width=240 height=500/></td>
+    <td><img src = "https://user-images.githubusercontent.com/37804253/220557466-ebde662b-fd21-474f-aee4-f6bd1785bb3d.png" width=240 height=500/></td>
   </tr>
 </table>
 

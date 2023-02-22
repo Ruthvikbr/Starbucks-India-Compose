@@ -38,7 +38,7 @@
 
     <!-- Dashboard-->
     <string name="popular_menu_items">Popular menu items</string>
-    <string name="user_greeting">Hello Mark! \nReady for your coffee ?</string>
+    <string name="user_greeting">Hello Ruthvik! \nReady for your coffee ?</string>
     <string name="latest_updates">Latest updates</string>
     <string name="news_headline">Learn more about the \nWorld of Coffee</string>
     <string name="news_title">Coffee Beginnings</string>
@@ -79,5 +79,86 @@
 
     <string name="empty_screen_title">Your cart is empty</string>
     <string name="empty_screen_btn_text">Order now</string>
+
+    <string name="back_button">Back button</string>
+    <string name="get_help">Get Help</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="get_help_description">Please enter your registered details and we will send you an OTP to reset your password</string>
+    <string name="username">USERNAME</string>
+    <string name="username_hint">Enter Email ID or Mobile Number</string>
+    <string name="date_of_birth">DATE OF BIRTH</string>
+    <string name="date_of_birth_hint">DD/MM/YYYY</string>
+    <string name="password">PASSWORD</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="start_login_btn">Start Login Icon</string>
+    <string name="landing_img">Landing screen background image</string>
+    <string name="dont_have_an_account">Don\'t have an account ? </string>
+    <string name="facing_trouble">Facing trouble logging in ? </string>
+
+    <string name="login_to_starbucks">Login To Starbucks</string>
+    <string name="create_password">CREATE PASSWORD</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="email_id">EMAIL ID</string>
+    <string name="email_hint">Enter Email ID</string>
+    <string name="confirm_password_hint">Re-enter Password</string>
+    <string name="mobile">MOBILE NUMBER</string>
+    <string name="mobile_hint">Enter Mobile Number</string>
+    <string name="otp_info">We will send an OTP to this Mobile Number for verification</string>
+    <string name="character_constraint">8 characters</string>
+    <string name="continue_btn">Continue</string>
+    <string name="case_constraint">1 uppercase</string>
+    <string name="numeric_constraint">1 Number</string>
+    <string name="symbolic_constraint">1 symbol</string>
+    <string name="otp_sent">OTP was sent to </string>
+    <string name="otp_description">Please enter the OTP you have received on your registered Mobile Number</string>
+    <string name="enter_otp">ENTER OTP</string>
+    <string name="time_remaining">Time Remaining</string>
+    <string name="didnt_receive_otp">Didn\'t receive OTP? </string>
+    <string name="resend">Resend</string>
+    <string name="confirm">Confirm</string>
+    <string name="create_an_account">Create An Account</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="verification">Verification</string>
+    <string name="registration_success">Registered successfully</string>
+    <string name="firstname">FIRST NAME*</string>
+    <string name="lastname">LAST NAME*</string>
+    <string name="birthdate">BIRTH DATE*</string>
+    <string name="firstname_hint">Enter First Name</string>
+    <string name="lastname_hint">Enter Last Name</string>
+    <string name="personal_details_form_title">ONE FINAL STEP, TELL US A LITTLE ABOUT YOU</string>
+    <string name="birthdate_info_text">Share your birthday to receive a reward during that month. It cannot be changed after submission.</string>
+    <string name="got_a_referral_code">Got a referral code</string>
+    <string name="referral_code_hint">Enter referral code for special rewards</string>
+    <string name="enter_referral_code">Enter Code</string>
+
+    <string name="starbucks_version">Starbucks Version</string>
+    <string name="logout">LOGOUT</string>
+    <string name="referral">Refer and Earn Stars</string>
+    <string name="referral_description">Starbucks is best when it\'s shared. Invite your loved ones and get one bonus star on each registration.</string>
+    <string name="share_invite">Share invite code</string>
+    <string name="communication_preference_heading">Please tell us your preferred mode of communication</string>
+    <string name="sms">SMS</string>
+    <string name="email">E-Mail</string>
+    <string name="where_shall_we_reach_you">Where shall we reach you?</string>
+    <string name="agreement">By joining, I agree to the Terms &amp; Conditions.</string>
+
+    <string name="app_permissions">App permissions</string>
+    <string name="preferences_terms">PREFERENCES &amp; TERMS</string>
+    <string name="quick_login">Quick Login</string>
+    <string name="legal">Legal</string>
+    <string name="account">Account</string>
+    <string name="change_password">Change Password</string>
+    <string name="request_account_deletion">Request Account Deletion</string>
+    <string name="terms_conditions">Terms and Conditions</string>
+    <string name="location">Location</string>
+    <string name="finger_print_icon">Finger Print Icon</string>
+    <string name="set_pin">Set 4 digit pin</string>
+    <string name="set_device_lock">Enable device lock</string>
+    <string name="set_device_lock_description">Use your current device lock</string>
+    <string name="pin_description">Create a starbucks pin so that only you can access / Pay with your phone</string>
+    <string name="password_toggle_icon">Password Toggle icon</string>
+    <string name="finish_sign_up">Finish Sign Up</string>
 
 </resources>

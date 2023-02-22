@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.StarbucksIndiaCompose" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/starbucks_green</item>
+        <item name="android:statusBarColor">#1e3930</item>
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">

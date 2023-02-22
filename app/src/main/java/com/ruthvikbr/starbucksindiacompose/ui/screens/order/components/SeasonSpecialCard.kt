@@ -36,12 +36,12 @@ fun SeasonSpecialCard() {
             .fillMaxWidth(0.8f)
             .height(200.dp)
             .clip(
-                RoundedCornerShape(16.dp)
+                RoundedCornerShape(16.dp),
             )
             .background(SpecialItemColor)
             .padding(horizontal = 8.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         AsyncImage(
             model = rememberCoilImageRequest(data = "https://iili.io/bKcFJ2.png"),
@@ -49,22 +49,22 @@ fun SeasonSpecialCard() {
             modifier = Modifier
                 .size(75.dp)
                 .clip(CircleShape),
-            contentScale = ContentScale.Fit
+            contentScale = ContentScale.Fit,
         )
         Column(
             modifier = Modifier.fillMaxHeight().padding(vertical = 16.dp),
-            verticalArrangement = Arrangement.SpaceBetween
+            verticalArrangement = Arrangement.SpaceBetween,
         ) {
             Column() {
                 Text(
                     text = stringResource(id = R.string.seasonal_special),
                     style = MaterialTheme.typography.subtitle2,
-                    color = PrimaryWhite
+                    color = PrimaryWhite,
                 )
                 Text(
                     text = "Iced frappuccino",
                     style = MaterialTheme.typography.h4,
-                    color = PrimaryWhite
+                    color = PrimaryWhite,
                 )
             }
             Row {
@@ -72,17 +72,17 @@ fun SeasonSpecialCard() {
                     Text(
                         text = stringResource(id = R.string.starting_from),
                         style = MaterialTheme.typography.subtitle2,
-                        color = PrimaryWhite
+                        color = PrimaryWhite,
                     )
                     Text(
                         text = stringResource(id = R.string.currency_symbol, 200),
                         style = MaterialTheme.typography.h5,
-                        color = PrimaryWhite
+                        color = PrimaryWhite,
                     )
                 }
                 SpacerComponent(
                     spaceInDp = 16.dp,
-                    isVerticalSpace = false
+                    isVerticalSpace = false,
                 )
                 Text(
                     text = stringResource(id = R.string.add_to_cart),
@@ -96,8 +96,8 @@ fun SeasonSpecialCard() {
                         }
                         .padding(
                             vertical = 8.dp,
-                            horizontal = 16.dp
-                        )
+                            horizontal = 16.dp,
+                        ),
                 )
             }
         }

@@ -12,7 +12,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryBlack
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
@@ -26,12 +28,12 @@ fun PermissionsList(
 ) {
     Column {
         PermissionItem(
-            label = "Notifications",
+            label = stringResource(id = R.string.notifications),
             selected = notificationsPermissionEnabled,
             onCheckedChange = onNotificationAccessChanged,
         )
         PermissionItem(
-            label = "Location",
+            label = stringResource(id = R.string.location),
             selected = locationPermissionEnabled,
             onCheckedChange = onLocationAccessChanged,
         )

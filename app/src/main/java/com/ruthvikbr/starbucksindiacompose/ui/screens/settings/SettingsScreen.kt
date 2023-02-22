@@ -14,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.AppVersion
 import com.ruthvikbr.starbucksindiacompose.ui.components.SpacerComponent
 import com.ruthvikbr.starbucksindiacompose.ui.screens.settings.components.AccountItemsList
@@ -67,7 +69,7 @@ fun SettingsScreen(composeNavigator: ComposeNavigator) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             item {
-                SettingsSubHeading(label = "App permissions")
+                SettingsSubHeading(label = stringResource(id = R.string.app_permissions))
                 PermissionsList(
                     notificationsPermissionEnabled = isNotificationsPermissionSelected,
                     locationPermissionEnabled = isLocationPermissionSelected,
@@ -80,7 +82,7 @@ fun SettingsScreen(composeNavigator: ComposeNavigator) {
                 )
             }
             item {
-                SettingsSubHeading(label = "Preferences & Terms")
+                SettingsSubHeading(label = stringResource(id = R.string.preferences_terms))
                 CommunicationPreferencesList(
                     smsEnabled = isSmsCommunicationEnabled,
                     emailEnabled = isEmailCommunicationEnabled,
@@ -93,7 +95,7 @@ fun SettingsScreen(composeNavigator: ComposeNavigator) {
                 )
             }
             item {
-                SettingsSubHeading(label = "Quick Login")
+                SettingsSubHeading(label = stringResource(id = R.string.quick_login))
                 QuickLoginList(
                     selectedQuickLoginMode = selectedQuickLoginMode,
                     onLoginModeChange = {
@@ -102,7 +104,7 @@ fun SettingsScreen(composeNavigator: ComposeNavigator) {
                 )
             }
             item {
-                SettingsSubHeading(label = "Legal")
+                SettingsSubHeading(label = stringResource(id = R.string.legal))
                 LegalItemsList(
                     onTermsAndConditionsClicked = {},
                     onPrivacyPolicyClicked = {},
@@ -110,7 +112,7 @@ fun SettingsScreen(composeNavigator: ComposeNavigator) {
                 SpacerComponent(spaceInDp = 16.dp)
             }
             item {
-                SettingsSubHeading(label = "Account")
+                SettingsSubHeading(label = stringResource(id = R.string.account))
                 AccountItemsList(
                     onFeedbackClicked = { },
                     onChangePasswordClicked = { },

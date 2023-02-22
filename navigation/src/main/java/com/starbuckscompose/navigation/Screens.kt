@@ -41,6 +41,8 @@ sealed class StarbucksScreen(
     object OrderSuccess : StarbucksScreen("order_success")
     object Stores : StarbucksScreen("stores")
     object Notifications : StarbucksScreen("notifications")
+    object Landing : StarbucksScreen("landing")
+    object SignUp : StarbucksScreen("signup")
 }
 
 sealed class StarbucksRoute(val name: String) {

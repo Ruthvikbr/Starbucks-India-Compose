@@ -17,7 +17,7 @@ import java.net.URLEncoder
 @Composable
 fun HomeScreen(
     composeNavigator: ComposeNavigator,
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val carouselList by viewModel.carouselItemList.collectAsState()
     val carouselItems by carouselList.collectAsState(initial = emptyList())
@@ -37,13 +37,13 @@ fun HomeScreen(
         CoffeeNews { title, imageUrl, content ->
             composeNavigator.navigate(
                 StarbucksScreen.NewsScreen.route
-                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content")
+                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content"),
             )
         }
         StarbucksNews(onNewsItemClicked = { title, imageUrl, content ->
             composeNavigator.navigate(
                 StarbucksScreen.NewsScreen.route
-                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content")
+                    .plus("/$title/${URLEncoder.encode(imageUrl,"UTF-8")}/$content"),
             )
         }, newsList = starbucksNews)
     }
