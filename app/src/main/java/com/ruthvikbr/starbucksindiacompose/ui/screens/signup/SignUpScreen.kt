@@ -19,7 +19,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import com.ruthvikbr.starbucksindiacompose.R
 import com.ruthvikbr.starbucksindiacompose.ui.components.AppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.signup.components.CredentialsForm
@@ -29,8 +28,11 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.signup.components.Registra
 import com.ruthvikbr.starbucksindiacompose.ui.screens.signup.components.StepProgress
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreen
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
+import com.ruthvikbr.starbucksindiacompose.ui.utils.REGISTRATION_SCREEN_SLIDE_IN_ANIMATION
+import com.ruthvikbr.starbucksindiacompose.ui.utils.REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION
 import com.ruthvikbr.starbucksindiacompose.ui.utils.RegistrationStage
 import com.starbuckscompose.navigation.ComposeNavigator
+import com.starbuckscompose.navigation.StarbucksScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -45,7 +47,31 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
         mutableStateOf("")
     }
     var mobileNumber by remember {
-        mutableStateOf("6360151024")
+        mutableStateOf("")
+    }
+
+    var firstName by remember {
+        mutableStateOf("")
+    }
+
+    var lastName by remember {
+        mutableStateOf("")
+    }
+
+    var birthday by remember {
+        mutableStateOf("")
+    }
+
+    var referralCode by remember {
+        mutableStateOf("")
+    }
+
+    var isSmsEnabled by remember {
+        mutableStateOf(false)
+    }
+
+    var isEmailEnabled by remember {
+        mutableStateOf(false)
     }
 
     var currentRegistrationStep: RegistrationStage by remember {
@@ -66,8 +92,6 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
     var registrationStage by remember {
         mutableStateOf(1)
     }
-
-    val density = LocalDensity.current
 
     LaunchedEffect(key1 = currentRegistrationStep) {
         when (currentRegistrationStep) {
@@ -90,9 +114,6 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
         }
     }
 
-    val animationTime = 300
-    val animationDelayTime = 700
-
     Scaffold(
         topBar = {
             AppBar(
@@ -114,14 +135,14 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
                 enter = slideInHorizontally(
                     initialOffsetX = { -300 },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
                     ),
                 ),
                 exit = slideOutHorizontally(
                     targetOffsetX = { -300 },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
                     ),
                 ),
@@ -145,15 +166,15 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
                 enter = slideInHorizontally(
                     initialOffsetX = { it },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
-                        delayMillis = animationDelayTime,
+                        delayMillis = REGISTRATION_SCREEN_SLIDE_IN_ANIMATION,
                     ),
                 ),
                 exit = slideOutHorizontally(
                     targetOffsetX = { -300 },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
                     ),
                 ),
@@ -167,44 +188,73 @@ fun SignupScreen(composeNavigator: ComposeNavigator) {
                 enter = slideInHorizontally(
                     initialOffsetX = { it },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
-                        delayMillis = animationDelayTime,
+                        delayMillis = REGISTRATION_SCREEN_SLIDE_IN_ANIMATION,
                     ),
                 ),
                 exit = slideOutHorizontally(
                     targetOffsetX = { -300 },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
                     ),
                 ),
             ) {
-                PersonalDetailsForm(onSubmitClicked = {
-                    currentRegistrationStep = RegistrationStage.RegistrationSuccessStage
-                })
+                PersonalDetailsForm(
+                    firstName = firstName,
+                    lastName = lastName,
+                    birthday = birthday,
+                    referralCode = referralCode,
+                    isSmsEnabled = isSmsEnabled,
+                    isEmailEnabled = isEmailEnabled,
+                    onFirstNameChanged = {
+                        firstName = it
+                    },
+                    onLastNameChanged = {
+                        lastName = it
+                    },
+                    onBirthdayChanged = {
+                        birthday = it
+                    },
+                    onReferralCodeChanged = {
+                        referralCode = it
+                    },
+                    onReferralCodeSubmitted = {},
+                    onSmsPreferenceChanged = {
+                        isSmsEnabled = it
+                    },
+                    onEmailPreferenceChanged = {
+                        isEmailEnabled = it
+                    },
+                    onSubmitClicked = {
+                        currentRegistrationStep = RegistrationStage.RegistrationSuccessStage
+                    },
+                )
             }
             AnimatedVisibility(
                 visible = currentRegistrationStep == RegistrationStage.RegistrationSuccessStage,
                 enter = slideInHorizontally(
                     initialOffsetX = { it },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
-                        delayMillis = animationDelayTime,
+                        delayMillis = REGISTRATION_SCREEN_SLIDE_IN_ANIMATION,
                     ),
                 ),
                 exit = slideOutHorizontally(
                     targetOffsetX = { -300 },
                     animationSpec = tween(
-                        durationMillis = animationTime,
+                        durationMillis = REGISTRATION_SCREEN_SLIDE_OUT_ANIMATION,
                         easing = LinearEasing,
                     ),
                 ),
             ) {
-                RegistrationSuccess(onSubmitClicked = {
-                    currentRegistrationStep = RegistrationStage.RegistrationSuccessStage
-                })
+                RegistrationSuccess(
+                    onSuccess = {
+                        composeNavigator.navigate(StarbucksScreen.Dashboard.name)
+                    },
+                )
             }
         }
     }

@@ -26,7 +26,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.theme.ReferralCardBackground
 
 @Composable
-fun Referral() {
+fun ReferralCard() {
     Column(
         modifier = Modifier
             .fillMaxWidth(0.8f)
@@ -65,5 +65,5 @@ fun Referral() {
 @Preview
 @Composable
 fun ReferralCardPreview() {
-    Referral()
+    ReferralCard()
 }

@@ -67,8 +67,9 @@ fun LandingScreen(composeNavigator: ComposeNavigator) {
                 SheetLayout(
                     currentSheet,
                     closeSheet,
-                    { openSheet(LandingScreenBottomSheet.GetHelpSheet) },
-                    { composeNavigator.navigate(StarbucksScreen.SignUp.route) },
+                    onGetHelpClicked = { openSheet(LandingScreenBottomSheet.GetHelpSheet) },
+                    onSignUpClicked = { composeNavigator.navigate(StarbucksScreen.SignUp.route) },
+                    onLoginButtonClicked = { composeNavigator.navigate(StarbucksScreen.Dashboard.name) },
                 )
             }
         },
@@ -114,11 +115,13 @@ fun SheetLayout(
     onCloseBottomSheet: () -> Unit,
     onGetHelpClicked: () -> Unit,
     onSignUpClicked: () -> Unit,
+    onLoginButtonClicked: () -> Unit,
 ) {
     when (currentScreen) {
         LandingScreenBottomSheet.LoginSheet -> LoginBottomSheet(
             onGetHelpClicked = onGetHelpClicked,
             onSignUpClicked = onSignUpClicked,
+            onLoginButtonClicked = onLoginButtonClicked,
         )
         LandingScreenBottomSheet.GetHelpSheet -> GetHelpBottomSheet(onCloseBottomSheet)
     }

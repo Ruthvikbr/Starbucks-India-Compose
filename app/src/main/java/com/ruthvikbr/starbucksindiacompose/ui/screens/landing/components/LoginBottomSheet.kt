@@ -30,6 +30,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 fun LoginBottomSheet(
     onGetHelpClicked: () -> Unit,
     onSignUpClicked: () -> Unit,
+    onLoginButtonClicked: () -> Unit,
 ) {
     var username by remember {
         mutableStateOf("")
@@ -78,7 +79,7 @@ fun LoginBottomSheet(
             onLinkClicked = onSignUpClicked,
         )
         SpacerComponent(spaceInDp = 48.dp)
-        AuthButton(enabled = true, text = stringResource(id = R.string.login), onButtonClicked = {})
+        AuthButton(enabled = true, text = stringResource(id = R.string.login), onButtonClicked = onLoginButtonClicked)
         SpacerComponent(spaceInDp = 8.dp)
         LinkerText(
             primaryText = stringResource(id = R.string.facing_trouble),

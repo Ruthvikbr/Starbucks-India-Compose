@@ -125,6 +125,9 @@
     <string name="firstname">FIRST NAME*</string>
     <string name="lastname">LAST NAME*</string>
     <string name="birthdate">BIRTH DATE*</string>
+    <string name="firstname_hint">Enter First Name</string>
+    <string name="lastname_hint">Enter Last Name</string>
+    <string name="personal_details_form_title">ONE FINAL STEP, TELL US A LITTLE ABOUT YOU</string>
     <string name="birthdate_info_text">Share your birthday to receive a reward during that month. It cannot be changed after submission.</string>
     <string name="got_a_referral_code">Got a referral code</string>
     <string name="referral_code_hint">Enter referral code for special rewards</string>
@@ -142,7 +145,7 @@
     <string name="agreement">By joining, I agree to the Terms &amp; Conditions.</string>
 
     <string name="app_permissions">App permissions</string>
-    <string name="preferences_terms">Preferences &amp; Terms</string>
+    <string name="preferences_terms">PREFERENCES &amp; TERMS</string>
     <string name="quick_login">Quick Login</string>
     <string name="legal">Legal</string>
     <string name="account">Account</string>
@@ -156,5 +159,6 @@
     <string name="set_device_lock_description">Use your current device lock</string>
     <string name="pin_description">Create a starbucks pin so that only you can access / Pay with your phone</string>
     <string name="password_toggle_icon">Password Toggle icon</string>
+    <string name="finish_sign_up">Finish Sign Up</string>
 
 </resources>

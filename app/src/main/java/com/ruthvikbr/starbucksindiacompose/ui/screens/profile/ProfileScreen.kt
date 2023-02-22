@@ -18,7 +18,7 @@ import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.Logout
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ProfileAppBar
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ProfileDetails
 import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ProfileMenuItem
-import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.Referral
+import com.ruthvikbr.starbucksindiacompose.ui.screens.profile.components.ReferralCard
 import com.ruthvikbr.starbucksindiacompose.ui.theme.HouseGreenSecondary
 import com.ruthvikbr.starbucksindiacompose.ui.theme.PrimaryWhite
 import com.ruthvikbr.starbucksindiacompose.ui.utils.ProfileMenuItemsList
@@ -59,7 +59,7 @@ fun ProfileScreen(composeNavigator: ComposeNavigator) {
                 ) {
                     Logout(onLogoutButtonClicked = {})
                     SpacerComponent(spaceInDp = 64.dp)
-                    Referral()
+                    ReferralCard()
                     SpacerComponent(spaceInDp = 32.dp)
                     AppVersion()
                     SpacerComponent(spaceInDp = 150.dp)
